@@ -40,7 +40,7 @@ export const AnimatedText = ({
     animation = defaultAnimations,
 }: AnimatedTextProps) => {
     const controls = useRef(null);
-    const isInView = useInView(controls, { once: once ?? true, amount: 0.5 });
+    const isInView = useInView(controls, { once: once ?? false, amount: 0.5 });
 
     return (
         <Wrapper className={className}>

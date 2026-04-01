@@ -20,11 +20,13 @@ export const TextReveal = ({
 }: TextRevealProps) => {
     const controls = useAnimation();
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const isInView = useInView(ref, { once: false, margin: "-50px" });
 
     useEffect(() => {
         if (isInView) {
             controls.start("visible");
+        } else {
+            controls.start("hidden");
         }
     }, [isInView, controls]);
 

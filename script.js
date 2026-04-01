@@ -148,14 +148,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Hero Content Stagger
-    const heroElements = document.querySelectorAll('.hero-subtitle, #home p, #home .btn');
+    const heroElements = document.querySelectorAll('.hero-subtitle, .hero-text p, .hero-btns');
     gsap.from(heroElements, {
         opacity: 0,
         y: 30,
         stagger: 0.2,
         duration: 1,
         ease: "power3.out",
-        delay: 1
+        delay: 1.2
+    });
+
+    // Hero Image Animation
+    gsap.from('.image-wrapper', {
+        opacity: 0,
+        scale: 0.8,
+        rotate: 10,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.5)",
+        delay: 1.5
     });
 
     // Section Reveals with Staggered Children

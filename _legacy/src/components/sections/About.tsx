@@ -33,7 +33,7 @@ export function About() {
                         <motion.span
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             className="text-primary font-medium italic underline decoration-primary/30 underline-offset-8"
                         >
                             {t.about.intro.includes('<highlight>')
@@ -48,7 +48,7 @@ export function About() {
                     <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: 48 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="h-[2px] bg-primary/30 mx-auto mb-12 rounded-full"
                     />
 

@@ -56,7 +56,7 @@ export function Contact() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="text-xl md:text-2xl text-muted-foreground mb-20 font-light max-w-2xl mx-auto leading-relaxed"
                     >

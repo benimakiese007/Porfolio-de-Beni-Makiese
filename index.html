@@ -99,11 +99,20 @@
     <section id="home" class="section">
         <div id="three-canvas-container"></div>
         <div class="container home-content">
-            <h1 class="hero-name">BENI MAKIESE<br>LEMA</h1>
-            <h2 class="hero-subtitle">Étudiant en économie, passionné par
-                l’analyse, la rigueur et les projets à impact.</h2>
-            <p>Je suis Beni. Bienvenue sur mon portfolio.</p>
-            <a href="#about" class="btn">Voir mon parcours</a>
+            <div class="hero-text">
+                <h1 class="hero-name">BENI<br>MAKIESE<br>LEMA</h1>
+                <h2 class="hero-subtitle">Étudiant en économie, passionné par
+                    l’analyse, la rigueur et les projets à impact.</h2>
+                <p>Je suis Beni. Bienvenue sur mon portfolio.</p>
+                <div class="hero-btns">
+                    <a href="#about" class="btn">Voir mon parcours</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="assets/profile.png" alt="Beni Makiese Lema">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -133,21 +142,35 @@
         <div class="container">
             <h2>Compétences</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Économie & Comptabilité</h3>
-                    <p>Analyse macro/micro, bilan comptable, gestion financière.</p>
-                </div>
-                <div class="skill-card">
+                <!-- 1. Statistiques & Excel -->
+                <div class="skill-card skill-stats">
+                    <div class="skill-icon"><i class="fa-solid fa-table-cells-large"></i></div>
                     <h3>Statistiques & Excel</h3>
-                    <p>Traitement de données, tableaux croisés dynamiques, modélisation.</p>
+                    <p>Traitement de données complexes, tableaux croisés dynamiques, modélisation et analyse prédictive.</p>
                 </div>
-                <div class="skill-card">
+                <!-- 2. Outils Numériques -->
+                <div class="skill-card skill-digital">
+                    <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3>Outils Numériques</h3>
-                    <p>Maitrise des outils bureautiques et digitaux modernes.</p>
+                    <p>Maîtrise des environnements de travail digitaux et des outils de productivité modernes.</p>
                 </div>
-                <div class="skill-card">
-                    <h3>Protocoles & Automatisation</h3>
-                    <p>Model Context Protocol (MCP), gestion de flux de données, optimisation et outils numériques avancés (Certifications complétées).</p>
+                <!-- 3. MCP -->
+                <div class="skill-card skill-mcp">
+                    <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Model Context Protocol (MCP)</h3>
+                    <p>Expertise dans l'interopérabilité des données et la connexion de l'IA aux outils externes via serveurs MCP.</p>
+                </div>
+                <!-- 4. AI Agente & Claude Code -->
+                <div class="skill-card skill-agent">
+                    <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI Agente & Claude Code</h3>
+                    <p>Développement de workflows autonomes et intégration de Claude Code pour l'optimisation des tâches complexes.</p>
+                </div>
+                <!-- 5. AI Fluency & Collaboration -->
+                <div class="skill-card skill-fluency">
+                    <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>AI Fluency & Collaboration</h3>
+                    <p>Collaboration responsable homme-machine et expertise en Prompt Engineering pour des résultats de haute précision.</p>
                 </div>
             </div>
         </div>
