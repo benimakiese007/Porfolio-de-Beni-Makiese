@@ -152,20 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from(heroElements, {
         opacity: 0,
         y: 30,
-        stagger: 0.2,
-        duration: 1,
+        stagger: 0.1,
+        duration: 0.8,
         ease: "power3.out",
-        delay: 1.2
+        delay: 0.5,
+        clearProps: "all"
     });
 
     // Hero Image Animation
     gsap.from('.image-wrapper', {
         opacity: 0,
-        scale: 0.8,
-        rotate: 10,
-        duration: 1.5,
-        ease: "elastic.out(1, 0.5)",
-        delay: 1.5
+        scale: 0.9,
+        duration: 1.2,
+        ease: "power2.out",
+        delay: 0.2,
+        clearProps: "all"
     });
 
     // Section Reveals with Staggered Children
@@ -178,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heading) {
             gsap.from(heading, {
                 scrollTrigger: {
-                    trigger: heading,
+                    trigger: section, // Using the section itself as trigger is safer
                     start: "top 85%",
                 },
                 opacity: 0,
@@ -191,28 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cards.length > 0) {
             gsap.from(cards, {
                 scrollTrigger: {
-                    trigger: cards[0],
-                    start: "top 90%",
+                    trigger: section, // Using the section itself as trigger is safer
+                    start: "top 80%",
                 },
                 opacity: 0,
                 y: 50,
-                stagger: 0.15,
-                duration: 1,
-                ease: "power3.out"
+                stagger: 0.1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "all" // Important: clear GSAP styles after animation
             });
         }
-
-        // Parallax background effect for sections
-        gsap.to(section, {
-            scrollTrigger: {
-                trigger: section,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            },
-            backgroundPositionY: "20%",
-            ease: "none"
-        });
     });
 
     // 3D Hero Animation (Three.js)

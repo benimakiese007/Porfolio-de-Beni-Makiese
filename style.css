@@ -20,16 +20,17 @@
 
 body.dark-mode {
     --secondary-color: #f4f4f4;
-    --background-color: #0a0a10;
-    --container-bg: rgba(30, 30, 40, 0.8);
-    --light-gray: #1a1a24;
-    --section-bg-light: rgba(20, 20, 30, 0.6);
-    --text-color: #e0e0e0;
-    --text-muted: #b0b0b0;
-    --navbar-bg: rgba(10, 10, 16, 0.7);
-    --navbar-scrolled-bg: rgba(15, 15, 25, 0.85);
-    --navbar-border: rgba(255, 255, 255, 0.1);
-    --card-shadow: rgba(0, 0, 0, 0.4);
+    --background-color: #05050a;
+    --container-bg: rgba(20, 20, 30, 0.7);
+    --light-gray: #0f0f1a;
+    --section-bg-light: rgba(15, 15, 25, 0.5);
+    --text-color: #f0f0f0;
+    --text-muted: #a0a0b0;
+    --navbar-bg: rgba(5, 5, 10, 0.6);
+    --navbar-scrolled-bg: rgba(10, 10, 20, 0.8);
+    --navbar-border: rgba(255, 255, 255, 0.08);
+    --card-shadow: rgba(0, 0, 0, 0.6);
+    --accent-gradient: linear-gradient(135deg, #0056b3, #00bfff);
 }
 
 * {
@@ -44,7 +45,12 @@ body {
     background-color: var(--background-color);
     line-height: 1.6;
     overflow-x: hidden;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
+    transition: background-color 0.5s ease;
+}
+
+/* Fallback visibility for cards animated by GSAP */
+.skill-card, .experience-item, .project-card, .about-text > *, .hero-name, .hero-subtitle, .hero-text p, .hero-btns, .image-wrapper {
+    opacity: 1; /* Default to visible if JS fails/takes time */
 }
 
 #particles-js {
@@ -55,7 +61,6 @@ body {
     left: 0;
     z-index: -1;
     background-color: var(--background-color);
-    transition: background-color var(--transition-speed);
 }
 
 a {
@@ -164,6 +169,8 @@ p {
     align-items: center;
     position: relative;
     overflow: hidden;
+    background: radial-gradient(circle at 10% 20%, rgba(0, 86, 179, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 191, 255, 0.05) 0%, transparent 40%);
 }
 
 .home-content {
@@ -222,11 +229,11 @@ p {
 .hero-image::before {
     content: '';
     position: absolute;
-    width: 110%;
-    height: 110%;
+    width: 130%;
+    height: 130%;
     background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-    opacity: 0.15;
-    filter: blur(40px);
+    opacity: 0.1;
+    filter: blur(60px);
     z-index: -1;
 }
 
