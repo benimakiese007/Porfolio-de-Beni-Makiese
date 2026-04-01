@@ -71,6 +71,24 @@ navLinksItems.forEach(item => {
     });
 });
 
+// Slider Buttons Logic
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const experiencesList = document.querySelector('.experiences-list');
+
+if (prevBtn && nextBtn && experiencesList) {
+    prevBtn.addEventListener('click', () => {
+        const itemWidth = experiencesList.querySelector('.experience-item').offsetWidth;
+        experiencesList.scrollBy({ left: -(itemWidth + 24), behavior: 'smooth' }); // 24 = gap (1.5rem)
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const itemWidth = experiencesList.querySelector('.experience-item').offsetWidth;
+        experiencesList.scrollBy({ left: itemWidth + 24, behavior: 'smooth' });
+    });
+}
+
+
 // 3. Custom Cursor & Interactions
 const cursor = document.querySelector('.custom-cursor');
 const cursorDot = document.querySelector('.custom-cursor-dot');
@@ -286,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true });
 
-    if (typeof VanillaTilt !== 'undefined') {
+    if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
         VanillaTilt.init(document.querySelectorAll(".skill-card, .experience-item, .project-card"), {
             max: 15,
             speed: 400,
@@ -314,43 +332,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Circular Progress Animation for Languages
-    const circularProgresses = document.querySelectorAll('.circular-progress');
-    if (circularProgresses.length > 0) {
-        circularProgresses.forEach(progress => {
-            const percentage = parseInt(progress.getAttribute('data-percentage'), 10);
-            let obj = { val: 0 };
-            
-            gsap.to(obj, {
-                scrollTrigger: {
-                    trigger: progress,
-                    start: "top 90%",
-                },
-                val: percentage,
-                duration: 2.5,
-                ease: "power3.out",
-                delay: 0.1,
-                onUpdate: function() {
-                    progress.style.background = `conic-gradient(var(--primary-color) ${obj.val * 3.6}deg, rgba(0, 86, 179, 0.1) 0deg)`;
-                    const num = progress.querySelector('.progress-num');
-                    if (num) num.innerText = Math.round(obj.val) + '%';
-                }
-            });
+    // Languages Skills - Circular Progress
+    const progressCircles = document.querySelectorAll('.progress-ring__circle');
+    progressCircles.forEach(circle => {
+        const percent = parseInt(circle.getAttribute('data-percent'), 10);
+        const radius = circle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+        
+        // Initial state
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = circumference;
+        
+        gsap.to(circle, {
+            strokeDashoffset: circumference - (percent / 100) * circumference,
+            duration: 2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: circle,
+                start: "top 90%",
+            }
         });
-    }
+    });
 
     // Hover effect pulse on lang cards
     const langCards = document.querySelectorAll('.lang-card');
     langCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            gsap.to(card.querySelector('.circular-progress'), {
+            gsap.to(card.querySelector('.progress-container'), {
                 scale: 1.08,
                 duration: 0.4,
                 ease: "back.out(2)"
             });
         });
         card.addEventListener('mouseleave', () => {
-            gsap.to(card.querySelector('.circular-progress'), {
+            gsap.to(card.querySelector('.progress-container'), {
                 scale: 1,
                 duration: 0.5,
                 ease: "power2.out"

@@ -70,12 +70,7 @@
     <!-- Header / Navbar -->
     <header>
         <div class="container navbar">
-            <a href="#" class="logo">Beni.</a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <a href="#" class="logo">Beni Makiese</a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active">Accueil</a></li>
@@ -92,6 +87,11 @@
                     </li>
                 </ul>
             </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </header>
 
@@ -110,7 +110,7 @@
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="assets/profile.jpeg" alt="Beni Makiese Lema">
+                    <img src="assets/profile.jpeg" alt="Beni Makiese Lema" loading="lazy">
                 </div>
             </div>
         </div>
@@ -160,11 +160,16 @@
                     <h3>Model Context Protocol (MCP)</h3>
                     <p>Expertise dans l'interopérabilité des données et la connexion de l'IA aux outils externes via serveurs MCP.</p>
                 </div>
-                <!-- 4. AI Agente & Claude Code -->
                 <div class="skill-card skill-agent">
                     <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
-                    <h3>AI Agente & Claude Code</h3>
+                    <h3>AI Agents & Claude Code</h3>
                     <p>Développement de workflows autonomes et intégration de Claude Code pour l'optimisation des tâches complexes.</p>
+                </div>
+                <!-- 4. Claude 101 -->
+                <div class="skill-card skill-claude">
+                    <div class="skill-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Claude 101</h3>
+                    <p>Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.</p>
                 </div>
                 <!-- 5. AI Fluency & Collaboration -->
                 <div class="skill-card skill-fluency">
@@ -179,42 +184,54 @@
     <!-- 3.5. Langues -->
     <section id="languages" class="section bg-light">
         <div class="container">
-            <h2>Langues</h2>
-            <div class="skills-grid" style="gap: 3rem;">
+            <h2 class="section-title">Langues</h2>
+            <div class="skills-grid">
                 <!-- Français -->
-                <div class="skill-card lang-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden;">
-                    <div class="circular-progress" data-percentage="100" style="position: relative; width: 130px; height: 130px; border-radius: 50%; background: conic-gradient(var(--primary-color) 0deg, rgba(0, 86, 179, 0.1) 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15);">
-                        <div style="position: absolute; width: 110px; height: 110px; background: var(--container-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);">
-                            <span style="font-size: 1.4rem; margin-bottom: -5px; font-weight: 800; color: var(--primary-color);">FR</span>
-                            <span class="progress-num" style="font-size: 1.1rem; font-weight: 800; color: var(--primary-color);">0%</span>
+                <div class="skill-card lang-card" data-aos="fade-up">
+                    <div class="progress-container">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring__background" stroke-width="8" fill="transparent" r="60" cx="70" cy="70" />
+                            <circle class="progress-ring__circle" data-percent="100" stroke="var(--primary-color)" stroke-width="8" fill="transparent" r="60" cx="70" cy="70" stroke-linecap="round" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="lang-code">FR</span>
+                            <span class="lang-percent">100%</span>
                         </div>
                     </div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">Français</h3>
-                    <p style="font-size: 1rem; font-weight: 700; color: var(--primary-color); margin: 0; padding: 0.4rem 1.2rem; background: rgba(0, 86, 179, 0.1); border-radius: 30px; border: 1px solid rgba(0, 86, 179, 0.2); letter-spacing: 1px;">COURANT</p>
+                    <h3>Français</h3>
+                    <span class="badge">COURANT</span>
                 </div>
-                
+
                 <!-- Anglais -->
-                <div class="skill-card lang-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden;">
-                    <div class="circular-progress" data-percentage="45" style="position: relative; width: 130px; height: 130px; border-radius: 50%; background: conic-gradient(var(--primary-color) 0deg, rgba(0, 86, 179, 0.1) 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15);">
-                        <div style="position: absolute; width: 110px; height: 110px; background: var(--container-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);">
-                            <span style="font-size: 1.4rem; margin-bottom: -5px; font-weight: 800; color: var(--primary-color);">EN</span>
-                            <span class="progress-num" style="font-size: 1.1rem; font-weight: 800; color: var(--primary-color);">0%</span>
+                <div class="skill-card lang-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="progress-container">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring__background" stroke-width="8" fill="transparent" r="60" cx="70" cy="70" />
+                            <circle class="progress-ring__circle" data-percent="45" stroke="var(--primary-color)" stroke-width="8" fill="transparent" r="60" cx="70" cy="70" stroke-linecap="round" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="lang-code">EN</span>
+                            <span class="lang-percent">45%</span>
                         </div>
                     </div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">Anglais</h3>
-                    <p style="font-size: 1rem; font-weight: 700; color: var(--primary-color); margin: 0; padding: 0.4rem 1.2rem; background: rgba(0, 86, 179, 0.1); border-radius: 30px; border: 1px solid rgba(0, 86, 179, 0.2); letter-spacing: 1px;">A2</p>
+                    <h3>Anglais</h3>
+                    <span class="badge">A2</span>
                 </div>
 
                 <!-- Lingala -->
-                <div class="skill-card lang-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden;">
-                    <div class="circular-progress" data-percentage="100" style="position: relative; width: 130px; height: 130px; border-radius: 50%; background: conic-gradient(var(--primary-color) 0deg, rgba(0, 86, 179, 0.1) 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15);">
-                        <div style="position: absolute; width: 110px; height: 110px; background: var(--container-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);">
-                            <span style="font-size: 1.4rem; margin-bottom: -5px; font-weight: 800; color: var(--primary-color);">LN</span>
-                            <span class="progress-num" style="font-size: 1.1rem; font-weight: 800; color: var(--primary-color);">0%</span>
+                <div class="skill-card lang-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="progress-container">
+                        <svg class="progress-ring" width="140" height="140">
+                            <circle class="progress-ring__background" stroke-width="8" fill="transparent" r="60" cx="70" cy="70" />
+                            <circle class="progress-ring__circle" data-percent="100" stroke="var(--primary-color)" stroke-width="8" fill="transparent" r="60" cx="70" cy="70" stroke-linecap="round" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="lang-code">LN</span>
+                            <span class="lang-percent">100%</span>
                         </div>
                     </div>
-                    <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">Lingala</h3>
-                    <p style="font-size: 1rem; font-weight: 700; color: var(--primary-color); margin: 0; padding: 0.4rem 1.2rem; background: rgba(0, 86, 179, 0.1); border-radius: 30px; border: 1px solid rgba(0, 86, 179, 0.2); letter-spacing: 1px;">COURANT</p>
+                    <h3>Lingala</h3>
+                    <span class="badge">COURANT</span>
                 </div>
             </div>
         </div>
@@ -223,88 +240,91 @@
     <!-- 4. Expériences -->
     <section id="experiences" class="section">
         <div class="container">
-            <h2>Expériences</h2>
-            <div class="carousel-wrapper">
-                <div class="experiences-list">
-
+            <h2 class="section-title">Expériences</h2>
+            <div class="carousel-wrapper" data-lenis-prevent>
+                <button class="slider-btn prev-btn" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="experiences-list" data-lenis-prevent="true">
                     <article class="experience-item">
+                        <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
                         <h3>Stage à la DGI</h3>
-                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des
-                            procédures fiscales et administratives.</p>
+                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
                     </article>
 
                     <article class="experience-item">
+                        <div class="exp-icon"><i class="fa-solid fa-user-tie"></i></div>
                         <h3>Job Étudiant</h3>
-                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la
-                            responsabilité.</p>
+                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
                     </article>
 
                     <!-- Duplicated for infinite scroll -->
                     <article class="experience-item">
+                        <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
                         <h3>Stage à la DGI</h3>
-                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des
-                            procédures fiscales et administratives.</p>
+                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
                     </article>
 
                     <article class="experience-item">
+                        <div class="exp-icon"><i class="fa-solid fa-user-tie"></i></div>
                         <h3>Job Étudiant</h3>
-                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la
-                            responsabilité.</p>
+                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
                     </article>
-
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 5. Projets -->
-    <section id="projects" class="section bg-light">
+    <section id="projects" class="section bg-dark">
         <div class="container">
-            <h2>Projets Académiques</h2>
+            <h2 class="section-title">Projets Académiques</h2>
             <div class="projects-grid">
                 
                 <!-- Projet 1: NewKet -->
-                <article class="project-card premium-project-card">
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="card-header">
-                        <div class="project-icon" style="background: linear-gradient(135deg, #0056b3, #00a8ff); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin-bottom: 1rem;">
+                        <div class="project-icon icon-blue">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">NewKet</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                        <h3>NewKet</h3>
+                        <p>
                             Plateforme e-commerce marketplace complète. Intègre une puissante gestion des vendeurs, des flux de produits en temps réel et un tableau de bord d'administration hautement sécurisé (Architecture NOVA-V2).
                         </p>
+                        <a href="https://newket.vercel.app/" target="_blank" class="project-link">Voir le Projet <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Projet 2: SongStory -->
-                <article class="project-card premium-project-card">
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-header">
-                        <div class="project-icon" style="background: linear-gradient(135deg, #8e44ad, #ff4757); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin-bottom: 1rem;">
+                        <div class="project-icon icon-purple">
                             <i class="fa-solid fa-music"></i>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">SongStory</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                        <h3>SongStory</h3>
+                        <p>
                             Application web interactive autour de l'univers musical. Offre une expérience utilisateur immersive et fluide avec des interfaces ultra-modernes et interactives.
                         </p>
+                        <a href="https://songstoryv3.vercel.app/" target="_blank" class="project-link">Voir le Projet <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Projet 3: AllKampus -->
-                <article class="project-card premium-project-card">
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-header">
-                        <div class="project-icon" style="background: linear-gradient(135deg, #f39c12, #f1c40f); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin-bottom: 1rem;">
+                        <div class="project-icon icon-yellow">
                             <i class="fa-solid fa-graduation-cap"></i>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">AllKampus</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                            Idéation et développement d'une solution numérique ciblant les étudiants. L'objectif est de centraliser les services et faciliter l'échange sur les campus.
+                        <h3>AllKampus</h3>
+                        <p>
+                            Idéation et développement d'une solution numérique ciblant les étudiants. L'objectif est de centraliser les services et faciliter l'échange sur les campus universitaires.
                         </p>
+                        <a href="https://allkampus-phx.vercel.app/" target="_blank" class="project-link">Voir le Projet <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -313,22 +333,30 @@
     </section>
 
     <!-- 5. CV -->
-    <section id="cv" class="section" data-aos="fade-in">
+    <section id="cv" class="section bg-dark">
         <div class="container" style="text-align: center;">
-            <h2>Mon CV</h2>
-            <p>Pour en savoir plus sur mon parcours détaillé.</p>
-            <!-- Remplacez '#' par le lien réel vers le fichier PDF plus tard -->
-            <a href="#" class="btn btn-secondary">Télécharger mon CV (PDF)</a>
+            <h2 class="section-title">Mon Parcours</h2>
+            <div class="cv-showcase" data-aos="zoom-in">
+                <div class="cv-card">
+                    <i class="fa-solid fa-file-pdf cv-icon"></i>
+                    <p>Découvrez mon parcours détaillé, mes certifications et mes réalisations académiques en un coup d'œil.</p>
+                    <div class="download-link">
+                        <a href="CV PHOENIX TEST.pdf" download class="btn shadow-sm">Télécharger mon CV (PDF)</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 6. Contact -->
-    <section id="contact" class="section bg-light">
-        <div class="container contact-container">
-            <h2>Me Contacter</h2>
-            <p class="contact-intro">Disponible pour toute collaboration ou opportunité.</p>
+    <section id="contact" class="section">
+        <div class="container contact-container" style="text-align: center;">
+            <h2 class="section-title">Me Contacter</h2>
+            <p class="contact-intro" style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+                Disponible pour des projets innovants, des collaborations créatives ou toute opportunité passionnante.
+            </p>
 
-            <div class="contact-links">
+            <div class="contact-links" data-aos="fade-up">
                 <a href="mailto:benimakiese1234@gmail.com" class="contact-btn email" title="Email">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
@@ -349,7 +377,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Beni. Tous droits réservés.</p>
+            <p>&copy; 2026 Beni Makiese. Tous droits réservés.</p>
         </div>
     </footer>
 
