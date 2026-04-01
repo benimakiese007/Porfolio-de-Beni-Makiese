@@ -1,0 +1,80 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Experience",
+        "contact": "Contact"
+    },
+    "hero": {
+        "subtitle": "Economics Student | Analytical Mind",
+        "description": "I transform learning, discipline, and analysis into tangible value through my studies, projects, and experiences.",
+        "cta": "Discover my journey",
+        "downloadCv": "Download my CV"
+    },
+    "about": {
+        "title": "About Me",
+        "intro": "Student in <highlight>Economics and Development</highlight> at the Catholic University of Congo, I build my path with method, calm, and consistency.",
+        "description": "Interested in management, economic analysis, and digital projects, I seek to learn, contribute, and grow in demanding environments.",
+        "education": "Education",
+        "degree1": "Bachelor's in Economics and Development",
+        "degree1School": "Catholic University of Congo",
+        "degree1Status": "ongoing",
+        "degree2": "High School Diploma, Business Track",
+        "degree2School": "Reverend KIM School",
+        "degree2Mention": "With Honors"
+    },
+    "skills": {
+        "title": "What I Do",
+        "subtitle": "My areas of expertise and intervention.",
+        "items": [
+            {
+                "title": "Analysis & Management",
+                "description": "Understanding economic mechanisms, basic accounting, rigorous operations management."
+            },
+            {
+                "title": "Tools & Data",
+                "description": "Excel, academic statistics, information organization and processing."
+            },
+            {
+                "title": "Digital Projects",
+                "description": "Exploring the web, automation, and AI tools for educational purposes."
+            },
+            {
+                "title": "Protocols & Automation",
+                "description": "Model Context Protocol (MCP), document management, workflow automation, and productivity tools."
+            }
+        ]
+    },
+    "projects": {
+        "title": "Experience",
+        "subtitle": "An overview of my professional and academic journey.",
+        "items": [
+            {
+                "title": "General Directorate of Taxes",
+                "subtitle": "Professional Internship",
+                "description": "Analysis of tax procedures and optimization of administrative flows within the DGI."
+            },
+            {
+                "title": "Commercial Management",
+                "subtitle": "Student Job",
+                "description": "Cashier and customer relations. Transaction management and conflict resolution."
+            },
+            {
+                "title": "Academic Research",
+                "subtitle": "University",
+                "description": "Research work on current macroeconomic trends."
+            }
+        ]
+    },
+    "contact": {
+        "title": "Ready to collaborate?",
+        "subtitle": "Let's discuss your projects and how my analysis can add value to them.",
+        "email": "Email",
+        "phone": "Phone",
+        "linkedin": "LinkedIn"
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

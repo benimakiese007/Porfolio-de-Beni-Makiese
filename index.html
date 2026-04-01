@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Beni - Étudiant en Économie</title>
+    <meta name="description" content="Portfolio de Beni, étudiant en économie passionné par l'analyse et la gestion.">
+    <meta name="keywords"
+        content="Beni, Portfolio, Économie, Étudiant, Analyse financière, Gestion de projet, Comptabilité">
+    <meta name="author" content="Beni">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-site.com/">
+    <meta property="og:title" content="Portfolio Beni - Étudiant en Économie">
+    <meta property="og:description"
+        content="Découvrez le parcours, les compétences et les projets de Beni, étudiant en économie.">
+    <meta property="og:image" content="https://votre-site.com/image-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://votre-site.com/">
+    <meta property="twitter:title" content="Portfolio Beni - Étudiant en Économie">
+    <meta property="twitter:description"
+        content="Découvrez le parcours, les compétences et les projets de Beni, étudiant en économie.">
+    <meta property="twitter:image" content="https://votre-site.com/image-preview.jpg">
+
+    <!-- Favicon & Canonical (Placeholders) -->
+    <link rel="canonical" href="https://votre-site.com/">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Beni",
+      "url": "https://votre-site.com/",
+      "image": "https://votre-site.com/image-preview.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/benimakiese007",
+        "https://wa.me/243990924254"
+      ],
+      "jobTitle": "Étudiant en Économie",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Indépendant"
+      },
+      "description": "Étudiant en économie passionné par l'analyse et la gestion. Portfolio de Beni."
+    }
+    </script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Beni.</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Accueil</a></li>
+                    <li><a href="#about" class="nav-link">À Propos</a></li>
+                    <li><a href="#skills" class="nav-link">Compétences</a></li>
+                    <li><a href="#languages" class="nav-link">Langues</a></li>
+                    <li><a href="#experiences" class="nav-link">Expériences</a></li>
+                    <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Accueil (Home) -->
+    <section id="home" class="section">
+        <div id="three-canvas-container"></div>
+        <div class="container home-content">
+            <h1 class="hero-name">BENI MAKIESE<br>LEMA</h1>
+            <h2 class="hero-subtitle">Étudiant en économie, passionné par
+                l’analyse, la rigueur et les projets à impact.</h2>
+            <p>Je suis Beni. Bienvenue sur mon portfolio.</p>
+            <a href="#about" class="btn">Voir mon parcours</a>
+        </div>
+    </section>
+
+    <!-- 2. À propos de moi -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Qui suis-je ?</h3>
+                    <p>Je suis un étudiant en économie curieux et déterminé. Au-delà des chiffres, je cherche à
+                        comprendre les mécanismes qui régissent nos échanges et notre société.</p>
+
+                    <h3>Mon objectif</h3>
+                    <p>Devenir un acteur clé dans l'analyse économique et la gestion de projets, en apportant une vision
+                        claire et structurée.</p>
+
+                    <h3>Ma philosophie</h3>
+                    <p>Authentique, calme et confiant. Je crois en la valeur du travail bien fait et de la rigueur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Compétences -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Économie & Comptabilité</h3>
+                    <p>Analyse macro/micro, bilan comptable, gestion financière.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Statistiques & Excel</h3>
+                    <p>Traitement de données, tableaux croisés dynamiques, modélisation.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Outils Numériques</h3>
+                    <p>Maitrise des outils bureautiques et digitaux modernes.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Protocoles & Automatisation</h3>
+                    <p>Model Context Protocol (MCP), gestion de flux de données, optimisation et outils numériques avancés (Certifications complétées).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3.5. Langues -->
+    <section id="languages" class="section bg-light">
+        <div class="container">
+            <h2>Langues</h2>
+            <div class="skills-grid" style="gap: 3rem;">
+                <!-- Français -->
+                <div class="skill-card lang-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden;">
+                    <div class="circular-progress" data-percentage="100" style="position: relative; width: 130px; height: 130px; border-radius: 50%; background: conic-gradient(var(--primary-color) 0deg, rgba(0, 86, 179, 0.1) 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15);">
+                        <div style="position: absolute; width: 110px; height: 110px; background: var(--container-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.4rem; margin-bottom: -5px; font-weight: 800; color: var(--primary-color);">FR</span>
+                            <span class="progress-num" style="font-size: 1.1rem; font-weight: 800; color: var(--primary-color);">0%</span>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">Français</h3>
+                    <p style="font-size: 1rem; font-weight: 700; color: var(--primary-color); margin: 0; padding: 0.4rem 1.2rem; background: rgba(0, 86, 179, 0.1); border-radius: 30px; border: 1px solid rgba(0, 86, 179, 0.2); letter-spacing: 1px;">COURANT</p>
+                </div>
+                
+                <!-- Anglais -->
+                <div class="skill-card lang-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden;">
+                    <div class="circular-progress" data-percentage="45" style="position: relative; width: 130px; height: 130px; border-radius: 50%; background: conic-gradient(var(--primary-color) 0deg, rgba(0, 86, 179, 0.1) 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15);">
+                        <div style="position: absolute; width: 110px; height: 110px; background: var(--container-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.4rem; margin-bottom: -5px; font-weight: 800; color: var(--primary-color);">EN</span>
+                            <span class="progress-num" style="font-size: 1.1rem; font-weight: 800; color: var(--primary-color);">0%</span>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">Anglais</h3>
+                    <p style="font-size: 1rem; font-weight: 700; color: var(--primary-color); margin: 0; padding: 0.4rem 1.2rem; background: rgba(0, 86, 179, 0.1); border-radius: 30px; border: 1px solid rgba(0, 86, 179, 0.2); letter-spacing: 1px;">A2</p>
+                </div>
+
+                <!-- Lingala -->
+                <div class="skill-card lang-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden;">
+                    <div class="circular-progress" data-percentage="100" style="position: relative; width: 130px; height: 130px; border-radius: 50%; background: conic-gradient(var(--primary-color) 0deg, rgba(0, 86, 179, 0.1) 0deg); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 10px 25px rgba(0, 86, 179, 0.15);">
+                        <div style="position: absolute; width: 110px; height: 110px; background: var(--container-bg); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);">
+                            <span style="font-size: 1.4rem; margin-bottom: -5px; font-weight: 800; color: var(--primary-color);">LN</span>
+                            <span class="progress-num" style="font-size: 1.1rem; font-weight: 800; color: var(--primary-color);">0%</span>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">Lingala</h3>
+                    <p style="font-size: 1rem; font-weight: 700; color: var(--primary-color); margin: 0; padding: 0.4rem 1.2rem; background: rgba(0, 86, 179, 0.1); border-radius: 30px; border: 1px solid rgba(0, 86, 179, 0.2); letter-spacing: 1px;">COURANT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Expériences -->
+    <section id="experiences" class="section">
+        <div class="container">
+            <h2>Expériences</h2>
+            <div class="carousel-wrapper">
+                <div class="experiences-list">
+
+                    <article class="experience-item">
+                        <h3>Stage à la DGI</h3>
+                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des
+                            procédures fiscales et administratives.</p>
+                    </article>
+
+                    <article class="experience-item">
+                        <h3>Job Étudiant</h3>
+                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la
+                            responsabilité.</p>
+                    </article>
+
+                    <!-- Duplicated for infinite scroll -->
+                    <article class="experience-item">
+                        <h3>Stage à la DGI</h3>
+                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des
+                            procédures fiscales et administratives.</p>
+                    </article>
+
+                    <article class="experience-item">
+                        <h3>Job Étudiant</h3>
+                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la
+                            responsabilité.</p>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Projets -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2>Projets Académiques</h2>
+            <div class="projects-grid">
+                
+                <!-- Projet 1: NewKet -->
+                <article class="project-card premium-project-card">
+                    <div class="card-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #0056b3, #00a8ff); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">NewKet</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Plateforme e-commerce marketplace complète. Intègre une puissante gestion des vendeurs, des flux de produits en temps réel et un tableau de bord d'administration hautement sécurisé (Architecture NOVA-V2).
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Projet 2: SongStory -->
+                <article class="project-card premium-project-card">
+                    <div class="card-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #8e44ad, #ff4757); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">SongStory</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Application web interactive autour de l'univers musical. Offre une expérience utilisateur immersive et fluide avec des interfaces ultra-modernes et interactives.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Projet 3: AllKampus -->
+                <article class="project-card premium-project-card">
+                    <div class="card-header">
+                        <div class="project-icon" style="background: linear-gradient(135deg, #f39c12, #f1c40f); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem;">AllKampus</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Idéation et développement d'une solution numérique ciblant les étudiants. L'objectif est de centraliser les services et faciliter l'échange sur les campus.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CV -->
+    <section id="cv" class="section" data-aos="fade-in">
+        <div class="container" style="text-align: center;">
+            <h2>Mon CV</h2>
+            <p>Pour en savoir plus sur mon parcours détaillé.</p>
+            <!-- Remplacez '#' par le lien réel vers le fichier PDF plus tard -->
+            <a href="#" class="btn btn-secondary">Télécharger mon CV (PDF)</a>
+        </div>
+    </section>
+
+    <!-- 6. Contact -->
+    <section id="contact" class="section bg-light">
+        <div class="container contact-container">
+            <h2>Me Contacter</h2>
+            <p class="contact-intro">Disponible pour toute collaboration ou opportunité.</p>
+
+            <div class="contact-links">
+                <a href="mailto:benimakiese1234@gmail.com" class="contact-btn email" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/243990924254" target="_blank" class="contact-btn whatsapp" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" class="contact-btn linkedin"
+                    title="LinkedIn (Bientôt disponible)">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/Benimakiese007" target="_blank" class="contact-btn instagram"
+                    title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beni. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Animation Libraries -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
