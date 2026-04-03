@@ -1,4 +1,5 @@
-// 1. Initialize Lenis (Smooth Scroll)
+const isLocalFile = window.location.protocol === 'file:';
+
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -9,6 +10,8 @@ const lenis = new Lenis({
     smoothTouch: false,
     touchMultiplier: 2,
     infinite: false,
+    // Disable history manipulation on local files to avoid Chrome security errors
+    syncTouch: !isLocalFile, 
 });
 
 function raf(time) {
@@ -85,30 +88,6 @@ if (prevBtn && nextBtn && experiencesList) {
 }
 
 
-// 3. Custom Cursor & Interactions
-const cursor = document.querySelector('.custom-cursor');
-const cursorDot = document.querySelector('.custom-cursor-dot');
-const interactiveElements = document.querySelectorAll('a, button, .skill-card, .experience-item, .project-card, .logo');
-
-document.addEventListener('mousemove', (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.15,
-        ease: "power2.out"
-    });
-    gsap.to(cursorDot, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.05,
-        ease: "power2.out"
-    });
-});
-
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
 
 // Project Cards Spotlight Effect
 const projectCards = document.querySelectorAll('.project-card');
@@ -232,45 +211,76 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3D Hero Animation (Three.js)
+    // 3D Hero Animation (Three.js Advanced Morphing Background)
     const initThreeJS = () => {
         const container = document.getElementById('three-canvas-container');
         if (!container) return;
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(renderer.domElement);
 
         // Lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
         scene.add(ambientLight);
 
-        const pointLight = new THREE.PointLight(0x0056b3, 2);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
+        const pointLight1 = new THREE.PointLight(0x0056b3, 2);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
 
-        // Object: A complex geometric shape (Icosahedron)
-        const geometry = new THREE.IcosahedronGeometry(2, 0);
+        const pointLight2 = new THREE.PointLight(0xffffff, 1);
+        pointLight2.position.set(-5, -5, 5);
+        scene.add(pointLight2);
+
+        // Predefined Geometries
+        const geometries = {
+            home: new THREE.IcosahedronGeometry(2.2, 0),
+            about: new THREE.SphereGeometry(1.8, 32, 32),
+            projects: new THREE.TorusGeometry(1.4, 0.6, 16, 100),
+            experiences: new THREE.OctahedronGeometry(2, 0),
+            skills: new THREE.DodecahedronGeometry(1.8, 0),
+            contact: new THREE.TorusKnotGeometry(1.2, 0.4, 100, 16)
+        };
+
+        // Section Configurations
+        const sectionConfigs = {
+            home: { geo: 'home', color: 0x0056b3, posX: 0, opacity: 0.35, scale: 1 },
+            about: { geo: 'about', color: 0x8833ff, posX: -3, opacity: 0.25, scale: 1.2 },
+            projects: { geo: 'projects', color: 0x00d4ff, posX: 3, opacity: 0.2, scale: 1 },
+            experiences: { geo: 'experiences', color: 0xff2a6d, posX: -3, opacity: 0.25, scale: 1.1 },
+            skills: { geo: 'skills', color: 0x05ffa1, posX: 3, opacity: 0.2, scale: 1 },
+            formation: { geo: 'about', color: 0x0056b3, posX: -3, opacity: 0.2, scale: 0.9 },
+            languages: { geo: 'home', color: 0xffcc00, posX: 3, opacity: 0.15, scale: 0.8 },
+            cv: { geo: 'experiences', color: 0xffffff, posX: -3, opacity: 0.2, scale: 1.1 },
+            interests: { geo: 'projects', color: 0x8833ff, posX: 3, opacity: 0.15, scale: 1 },
+            contact: { geo: 'contact', color: 0x00d4ff, posX: 0, opacity: 0.3, scale: 1.3 }
+        };
+
+        // Material
         const material = new THREE.MeshPhongMaterial({
-            color: 0x0056b3,
+            color: sectionConfigs.home.color,
             wireframe: true,
             transparent: true,
-            opacity: 0.4
+            opacity: sectionConfigs.home.opacity,
+            shininess: 100
         });
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
 
-        // Second layer: interior solid
-        const innerGeometry = new THREE.IcosahedronGeometry(1.8, 0);
+        // Main Mesh
+        let currentMesh = new THREE.Mesh(geometries.home, material);
+        scene.add(currentMesh);
+
+        // Inner Mesh (Solid)
         const innerMaterial = new THREE.MeshPhongMaterial({
-            color: 0x0056b3,
+            color: sectionConfigs.home.color,
             transparent: true,
-            opacity: 0.1,
+            opacity: 0.05,
             flatShading: true
         });
-        const innerMesh = new THREE.Mesh(innerGeometry, innerMaterial);
+        let innerMesh = new THREE.Mesh(geometries.home, innerMaterial);
+        innerMesh.scale.set(0.9, 0.9, 0.9);
         scene.add(innerMesh);
 
         camera.position.z = 5;
@@ -283,16 +293,68 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseY = (e.clientY / window.innerHeight) - 0.5;
         });
 
+        // Morphing Logic
+        const updateObject = (config) => {
+            if (!config) return;
+
+            // Animate properties
+            gsap.to(currentMesh.position, { x: config.posX, duration: 1.5, ease: "power2.inOut" });
+            gsap.to(innerMesh.position, { x: config.posX, duration: 1.5, ease: "power2.inOut" });
+            
+            gsap.to(material.color, {
+                r: new THREE.Color(config.color).r,
+                g: new THREE.Color(config.color).g,
+                b: new THREE.Color(config.color).b,
+                duration: 1.2
+            });
+
+            gsap.to(innerMaterial.color, {
+                r: new THREE.Color(config.color).r,
+                g: new THREE.Color(config.color).g,
+                b: new THREE.Color(config.color).b,
+                duration: 1.2
+            });
+
+            gsap.to(material, { opacity: config.opacity, duration: 1 });
+            gsap.to(currentMesh.scale, { x: config.scale, y: config.scale, z: config.scale, duration: 1.5, ease: "back.out(1.7)" });
+            gsap.to(innerMesh.scale, { x: config.scale * 0.9, y: config.scale * 0.9, z: config.scale * 0.9, duration: 1.5, ease: "back.out(1.7)" });
+
+            // Swap Geometry with a small pulse effect
+            if (currentMesh.geometry !== geometries[config.geo]) {
+                gsap.to([currentMesh.scale, innerMesh.scale], {
+                    x: 0, y: 0, z: 0, duration: 0.4, ease: "power2.in", onComplete: () => {
+                        currentMesh.geometry = geometries[config.geo];
+                        innerMesh.geometry = geometries[config.geo];
+                        gsap.to([currentMesh.scale, innerMesh.scale], {
+                            x: config.scale, y: config.scale, z: config.scale, 
+                            duration: 0.6, ease: "back.out(2)" 
+                        });
+                    }
+                });
+            }
+        };
+
+        // Scroll Observers
+        Object.keys(sectionConfigs).forEach(id => {
+            ScrollTrigger.create({
+                trigger: `#${id}`,
+                start: "top 50%",
+                end: "bottom 50%",
+                onEnter: () => updateObject(sectionConfigs[id]),
+                onEnterBack: () => updateObject(sectionConfigs[id])
+            });
+        });
+
         const animate = () => {
             requestAnimationFrame(animate);
 
-            mesh.rotation.x += 0.005;
-            mesh.rotation.y += 0.005;
-            innerMesh.rotation.x -= 0.003;
-            innerMesh.rotation.y -= 0.003;
+            currentMesh.rotation.x += 0.003;
+            currentMesh.rotation.y += 0.003;
+            innerMesh.rotation.x -= 0.002;
+            innerMesh.rotation.y -= 0.002;
 
-            mesh.rotation.y += mouseX * 0.05;
-            mesh.rotation.x += mouseY * 0.05;
+            currentMesh.rotation.y += mouseX * 0.05;
+            currentMesh.rotation.x += mouseY * 0.05;
             innerMesh.rotation.y += mouseX * 0.03;
             innerMesh.rotation.x += mouseY * 0.03;
 
@@ -302,9 +364,9 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
 
         window.addEventListener('resize', () => {
-            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setSize(window.innerWidth, window.innerHeight);
         });
     };
 
@@ -383,26 +445,100 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle Logic
     const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = themeToggle.querySelector("i");
-    const body = document.body;
+    if (themeToggle) {
+        const themeIcon = themeToggle.querySelector("i");
+        const body = document.body;
 
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-        body.classList.add("dark-mode");
-        updateThemeIcon(true);
-    }
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            body.classList.add("dark-mode");
+            updateThemeIcon(true);
+        }
 
-    themeToggle.addEventListener("click", () => {
-        const isDark = body.classList.toggle("dark-mode");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-        updateThemeIcon(isDark);
-    });
+        themeToggle.addEventListener("click", () => {
+            const isDark = body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            updateThemeIcon(isDark);
+        });
 
-    function updateThemeIcon(isDark) {
-        if (isDark) {
-            themeIcon.classList.replace("fa-moon", "fa-sun");
-        } else {
-            themeIcon.classList.replace("fa-sun", "fa-moon");
+        function updateThemeIcon(isDark) {
+            if (isDark) {
+                themeIcon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                themeIcon.classList.replace("fa-sun", "fa-moon");
+            }
         }
     }
+
+    // --- Advanced Animation System (Clean Integration) ---
+    
+    // 1. Sync ScrollTrigger with AOS & Lenis
+    if (typeof AOS !== 'undefined') {
+        // Refresh ScrollTrigger after AOS initialization
+        window.addEventListener('load', () => ScrollTrigger.refresh());
+    }
+
+    // 2. Hero Image Parallax
+    if (document.querySelector(".image-wrapper")) {
+        gsap.to(".image-wrapper", {
+            scrollTrigger: {
+                trigger: "#home",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            yPercent: 30,
+            scale: 1.05,
+            ease: "none"
+        });
+    }
+
+    // 3. Optimized Floating Engine (One listener for all icons)
+    const floatingIcons = document.querySelectorAll('.floating-icon');
+    if (floatingIcons.length > 0) {
+        floatingIcons.forEach((icon, index) => {
+            gsap.set(icon, {
+                x: gsap.utils.random(-20, 20),
+                y: gsap.utils.random(-20, 20),
+                rotation: gsap.utils.random(-15, 15)
+            });
+
+            gsap.to(icon, {
+                y: "+=40",
+                x: "+=20",
+                rotation: "+=15",
+                duration: gsap.utils.random(4, 7),
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: index * 0.1
+            });
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 30;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 30;
+            gsap.to('.floating-icon', {
+                x: (i) => `+=${moveX}`,
+                y: (i) => `+=${moveY}`,
+                duration: 2,
+                ease: "power1.out",
+                overwrite: 'auto'
+            });
+        });
+    }
+
+    // 4. Card Mouse Follow Glow Effect
+    const cards = document.querySelectorAll('.project-card, .skill-card, .interest-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
 });
+
+
