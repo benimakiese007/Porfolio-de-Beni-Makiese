@@ -61,12 +61,14 @@ sections.forEach(section => observer.observe(section));
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
     navLinks.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
 });
 
 navLinksItems.forEach(item => {
     item.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
         navLinks.classList.remove('active');
+        document.body.classList.remove('no-scroll');
     });
 });
 

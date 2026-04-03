@@ -52,6 +52,11 @@ body {
     transition: background-color 0.5s ease;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /* Fallback visibility for cards animated by GSAP */
 .skill-card, .experience-item, .project-card, .about-text > *, .hero-name, .hero-subtitle, .hero-text p, .hero-btns, .image-wrapper {
     opacity: 1; /* Default to visible if JS fails/takes time */
