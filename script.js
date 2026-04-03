@@ -61,7 +61,13 @@ sections.forEach(section => observer.observe(section));
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
     navLinks.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
+    const isNoScroll = document.body.classList.toggle('no-scroll');
+    
+    if (isNoScroll) {
+        lenis.stop();
+    } else {
+        lenis.start();
+    }
 });
 
 navLinksItems.forEach(item => {
@@ -69,7 +75,20 @@ navLinksItems.forEach(item => {
         mobileMenu.classList.remove('active');
         navLinks.classList.remove('active');
         document.body.classList.remove('no-scroll');
+        lenis.start();
     });
+});
+
+// Close menu on click outside
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active')) {
+        if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            lenis.start();
+        }
+    }
 });
 
 // Slider Buttons Logic

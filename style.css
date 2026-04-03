@@ -55,6 +55,8 @@ body {
 body.no-scroll {
     overflow: hidden;
     height: 100vh;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
 }
 
 /* Fallback visibility for cards animated by GSAP */
@@ -462,6 +464,7 @@ header.scrolled .navbar {
         border-radius: 40px 0 0 40px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-y !important;
     }
 
     .nav-links.active {
