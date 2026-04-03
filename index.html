@@ -34,7 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -68,16 +68,18 @@
             <a href="#" class="logo">Beni Makiese</a>
             <nav>
                 <ul class="nav-links" data-lenis-prevent>
-                    <li><a href="#home" class="nav-link active">Accueil</a></li>
-                    <li><a href="#about" class="nav-link">À Propos</a></li>
-                    <li><a href="#projects" class="nav-link">Projets</a></li>
-                    <li><a href="#experiences" class="nav-link">Expériences</a></li>
-                    <li><a href="#skills" class="nav-link">Compétences</a></li>
-                    <li><a href="#formation" class="nav-link">Formation</a></li>
-                    <li><a href="#languages" class="nav-link">Langues</a></li>
-                    <li><a href="#cv" class="nav-link">CV</a></li>
-                    <li><a href="#interests" class="nav-link">Centres d'Intérêt</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link active" data-i18n="nav-home">Accueil</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav-about">À Propos</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav-projects">Projets</a></li>
+                    <li><a href="#blog" class="nav-link" data-i18n="nav-blog">Réflexions</a></li>
+                    <li><a href="#experiences" class="nav-link" data-i18n="nav-experiences">Expériences</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Compétences</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+                    <li>
+                        <button id="language-toggle" class="language-toggle" aria-label="Switch Language">
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
                     <li>
                         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                             <i class="fa-solid fa-moon"></i>
@@ -103,11 +105,10 @@
         <div class="container home-content">
             <div class="hero-text">
                 <h1 class="hero-name">BENI<br>MAKIESE<br>LEMA</h1>
-                <h2 class="hero-subtitle">Étudiant en économie, passionné par
-                    l’analyse, la rigueur et les projets à impact.</h2>
-                <p>Je suis Beni. Bienvenue sur mon portfolio.</p>
+                <h2 class="hero-subtitle" data-i18n="hero-subtitle">Analyse économique guidée par l’IA. Rigueur académique, vision technologique.</h2>
+                <p data-i18n="hero-intro">Je suis Beni. Bienvenue sur mon portfolio.</p>
                 <div class="hero-btns">
-                    <a href="#about" class="btn">Voir mon parcours</a>
+                    <a href="#about" class="btn" data-i18n="hero-btn">Voir mon parcours</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -126,32 +127,32 @@
             <i class="fas fa-lightbulb floating-icon" style="top: 25%; left: 75%; opacity: 0.08;"></i>
         </div>
         <div class="container">
-            <h2>À propos de moi</h2>
+            <h2 data-i18n="about-title">À propos de moi</h2>
             <div class="about-grid">
                 <div class="about-text" data-aos="fade-right">
-                    <h3>Qui suis-je ?</h3>
-                    <p>Je suis un étudiant en économie curieux et déterminé. Au-delà des chiffres, je cherche à
+                    <h3 data-i18n="about-q1">Qui suis-je ?</h3>
+                    <p data-i18n="about-p1">Je suis un étudiant en économie curieux et déterminé. Au-delà des chiffres, je cherche à
                         comprendre les mécanismes qui régissent nos échanges et notre société.</p>
 
-                    <h3>Mon objectif</h3>
-                    <p>Devenir un acteur clé dans l'analyse économique et la gestion de projets, en apportant une vision
+                    <h3 data-i18n="about-q2">Mon objectif</h3>
+                    <p data-i18n="about-p2">Devenir un acteur clé dans l'analyse économique et la gestion de projets, en apportant une vision
                         claire et structurée.</p>
 
-                    <h3>Ma philosophie</h3>
-                    <p>Authentique, calme et confiant. Je crois en la valeur du travail bien fait et de la rigueur.</p>
+                    <h3 data-i18n="about-q3">Ma philosophie</h3>
+                    <p data-i18n="about-p3">Authentique, calme et confiant. Je crois en la valeur du travail bien fait et de la rigueur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. Projets -->
+    <!-- Section PROJETS -->
     <section id="projects" class="section bg-dark">
         <div class="container">
-            <h2 class="section-title">Projets Académiques</h2>
+            <h2 class="section-title" data-i18n="projects-title">Projets Académiques</h2>
             <div class="projects-grid">
                 
                 <!-- Projet 1: NewKet -->
-                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="0">
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="0" data-project="newket">
                     <div class="card-header">
                         <div class="project-icon icon-blue">
                             <i class="fa-solid fa-cart-shopping"></i>
@@ -165,15 +166,12 @@
                             <span class="tag">Firebase</span>
                             <span class="tag">Tailwind</span>
                         </div>
-                        <a href="https://newket.vercel.app/" target="_blank" class="project-link">
-                            <span class="link-text">Voir le Projet</span>
-                            <span class="link-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                        </a>
+                        <p class="project-summary" data-i18n="project-newket-desc">Plateforme d'achat de billets en ligne, simplifiant l'accès aux événements locaux.</p>
                     </div>
                 </article>
 
                 <!-- Projet 2: SongStory -->
-                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="100">
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="100" data-project="songstory">
                     <div class="card-header">
                         <div class="project-icon icon-purple">
                             <i class="fa-solid fa-music"></i>
@@ -187,15 +185,12 @@
                             <span class="tag">Spotify API</span>
                             <span class="tag">Tailwind</span>
                         </div>
-                        <a href="https://songstoryv3.vercel.app/" target="_blank" class="project-link">
-                            <span class="link-text">Voir le Projet</span>
-                            <span class="link-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                        </a>
+                        <p class="project-summary" data-i18n="project-songstory-desc">Une application interactive pour découvrir l'histoire derrière vos chansons préférées.</p>
                     </div>
                 </article>
 
                 <!-- Projet 3: AllKampus -->
-                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="200">
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="200" data-project="allkampus">
                     <div class="card-header">
                         <div class="project-icon icon-yellow">
                             <i class="fa-solid fa-graduation-cap"></i>
@@ -209,10 +204,7 @@
                             <span class="tag">Supabase</span>
                             <span class="tag">Google API</span>
                         </div>
-                        <a href="https://allkampus-phx.vercel.app/" target="_blank" class="project-link">
-                            <span class="link-text">Voir le Projet</span>
-                            <span class="link-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                        </a>
+                        <p class="project-summary" data-i18n="project-allkampus-desc">Solution centralisée pour la gestion de la vie estudiantine et académique.</p>
                     </div>
                 </article>
 
@@ -220,24 +212,105 @@
         </div>
     </section>
 
+    <!-- Section BLOG / REFLEXIONS -->
+    <section id="blog" class="section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title" data-i18n="blog-title">Réflexions & Analyses</h2>
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="blog-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post1-date">Avril 2026</span>
+                        <h3 data-i18n="blog-post1-title">L'IA : Menace ou opportunité pour l'économie ?</h3>
+                        <p data-i18n="blog-post1-desc">Une analyse sur la transformation des métiers financiers face à l'automatisation.</p>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-icon"><i class="fa-solid fa-coins"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post2-date">Février 2026</span>
+                        <h3 data-i18n="blog-post2-title">La finance décentralisée (DeFi) : Révolution ou simple bulle ?</h3>
+                        <p data-i18n="blog-post2-desc">Une plongée critique dans les mécanismes de la DeFi et ses implications bancaires.</p>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post3-date">Décembre 2025</span>
+                        <h3 data-i18n="blog-post3-title">Analyse de données : La rigueur avant tout</h3>
+                        <p data-i18n="blog-post3-desc">Pourquoi la propreté des données est plus cruciale que l'algorithme choisi.</p>
+                    </div>
+                </article>
+
+                <!-- Article 4 (Hidden by default) -->
+                <article class="blog-card hidden-blog" data-aos="fade-up" data-aos-delay="0">
+                    <div class="blog-icon"><i class="fa-solid fa-eye"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post4-date">Septembre 2025</span>
+                        <h3 data-i18n="blog-post4-title">L'économie de l'attention à l'ère des algorithmes</h3>
+                        <p data-i18n="blog-post4-desc">Comment les plateformes technologiques redéfinissent la création de valeur.</p>
+                    </div>
+                </article>
+
+                <!-- Article 5 (Hidden by default) -->
+                <article class="blog-card hidden-blog" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post5-date">Juin 2025</span>
+                        <h3 data-i18n="blog-post5-title">L'impact des biais cognitifs dans la modélisation</h3>
+                        <p data-i18n="blog-post5-desc">Pourquoi les prédictions échouent face à l'irrationalité du comportement humain.</p>
+                    </div>
+                </article>
+
+                <!-- Article 6 (Hidden by default) -->
+                <article class="blog-card hidden-blog" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post6-date">Mars 2025</span>
+                        <h3 data-i18n="blog-post6-title">Mon parcours d'autodidacte en tech</h3>
+                        <p data-i18n="blog-post6-desc">Comment j'ai combiné mes études d'économie avec l'apprentissage du code.</p>
+                    </div>
+                </article>
+
+                <!-- Article 7 (Hidden by default) -->
+                <article class="blog-card hidden-blog" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="blog-content">
+                        <span class="blog-date" data-i18n="blog-post7-date">Novembre 2024</span>
+                        <h3 data-i18n="blog-post7-title">Pourquoi coder m'a rendu meilleur en économie</h3>
+                        <p data-i18n="blog-post7-desc">L'approche systémique du génie logiciel appliquée à la macroéconomie.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="blog-more-container" style="text-align: center; margin-top: 3rem;" data-aos="fade-up">
+                <a href="#" id="blog-more-btn" class="btn btn-secondary shadow-sm" data-i18n="blog-see-more">Voir plus d'articles</a>
+            </div>
+        </div>
+    </section>
+
     <!-- 3. Expériences -->
     <section id="experiences" class="section">
         <div class="container">
-            <h2 class="section-title">Expériences</h2>
+            <h2 class="section-title" data-i18n="exp-title">Expériences</h2>
             <div class="carousel-wrapper" data-lenis-prevent>
                 <button class="slider-btn prev-btn" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="slider-btn next-btn" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
                 <div class="experiences-list" data-lenis-prevent="true">
                     <article class="experience-item">
                         <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3>Stage | D.G.I</h3>
-                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
+                        <h3 data-i18n="exp-1-title">Stage | D.G.I</h3>
+                        <p data-i18n="exp-1-desc">Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
                     </article>
 
                     <article class="experience-item">
                         <div class="exp-icon"><i class="fa-solid fa-user-tie"></i></div>
-                        <h3>Job Étudiant | L.A.C</h3>
-                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
+                        <h3 data-i18n="exp-2-title">Job Étudiant | L.A.C</h3>
+                        <p data-i18n="exp-2-desc">Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
                     </article>
                 </div>
             </div>
@@ -247,42 +320,42 @@
     <!-- 4. Compétences -->
     <section id="skills" class="section bg-light">
         <div class="container">
-            <h2>Compétences</h2>
+            <h2 data-i18n="skills-title">Compétences</h2>
             <div class="skills-grid">
                 <!-- 1. Statistiques & Excel -->
                 <div class="skill-card skill-stats">
                     <div class="skill-icon"><i class="fa-solid fa-table-cells-large"></i></div>
-                    <h3>Statistiques & Excel</h3>
-                    <p>Traitement de données complexes, tableaux croisés dynamiques, modélisation et analyse prédictive.</p>
+                    <h3 data-i18n="skill-1-title">Statistiques & Excel</h3>
+                    <p data-i18n="skill-1-desc">Traitement de données complexes, tableaux croisés dynamiques, modélisation et analyse prédictive.</p>
                 </div>
                 <!-- 2. Outils Numériques -->
                 <div class="skill-card skill-digital">
                     <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3>Outils Numériques</h3>
-                    <p>Maîtrise des environnements de travail digitaux et des outils de productivité modernes.</p>
+                    <h3 data-i18n="skill-2-title">Outils Numériques</h3>
+                    <p data-i18n="skill-2-desc">Maîtrise des environnements de travail digitaux et des outils de productivité modernes.</p>
                 </div>
                 <!-- 3. MCP -->
                 <div class="skill-card skill-mcp">
                     <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h3>Model Context Protocol (MCP)</h3>
-                    <p>Expertise dans l'interopérabilité des données et la connexion de l'IA aux outils externes via serveurs MCP.</p>
+                    <h3 data-i18n="skill-3-title">Model Context Protocol (MCP)</h3>
+                    <p data-i18n="skill-3-desc">Expertise dans l'interopérabilité des données et la connexion de l'IA aux outils externes via serveurs MCP.</p>
                 </div>
                 <div class="skill-card skill-agent">
                     <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
-                    <h3>AI Agents & Claude Code</h3>
-                    <p>Développement de workflows autonomes et intégration de Claude Code pour l'optimisation des tâches complexes.</p>
+                    <h3 data-i18n="skill-4-title">AI Agents & Claude Code</h3>
+                    <p data-i18n="skill-4-desc">Développement de workflows autonomes et intégration de Claude Code pour l'optimisation des tâches complexes.</p>
                 </div>
                 <!-- 4. Claude 101 -->
                 <div class="skill-card skill-claude">
                     <div class="skill-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3>Claude 101</h3>
-                    <p>Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.</p>
+                    <h3 data-i18n="skill-5-title">Claude 101</h3>
+                    <p data-i18n="skill-5-desc">Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.</p>
                 </div>
                 <!-- 5. AI Fluency & Collaboration -->
                 <div class="skill-card skill-fluency">
                     <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>AI Fluency & Collaboration</h3>
-                    <p>Collaboration responsable homme-machine et expertise en Prompt Engineering pour des résultats de haute précision.</p>
+                    <h3 data-i18n="skill-6-title">AI Fluency & Collaboration</h3>
+                    <p data-i18n="skill-6-desc">Collaboration responsable homme-machine et expertise en Prompt Engineering pour des résultats de haute précision.</p>
                 </div>
             </div>
         </div>
@@ -291,18 +364,18 @@
     <!-- 5. Formation -->
     <section id="formation" class="section">
         <div class="container">
-            <h2 class="section-title">Formation</h2>
+            <h2 class="section-title" data-i18n="edu-title">Formation</h2>
             <div class="formation-list">
                 <!-- UCC -->
                 <div class="formation-item" data-aos="fade-up">
                     <div class="formation-icon"><i class="fa-solid fa-university"></i></div>
                     <div class="formation-content">
                         <div class="formation-header">
-                            <h3>Licence 2 (L2) en Économie et Développement</h3>
-                            <span class="formation-date">En cours</span>
+                            <h3 data-i18n="edu-1-title">Licence 2 (L2) en Économie et Développement</h3>
+                            <span class="formation-date" data-i18n="edu-1-date">En cours</span>
                         </div>
-                        <p class="formation-institution">Université Catholique du Congo (UCC) – Kinshasa</p>
-                        <p class="formation-details">Faculté d’Économie et Développement. Approfondissement des théories économiques, analyse statistique et mécanismes de développement durable.</p>
+                        <p class="formation-institution" data-i18n="edu-1-inst">Université Catholique du Congo (UCC) – Kinshasa</p>
+                        <p class="formation-details" data-i18n="edu-1-desc">Faculté d’Économie et Développement. Approfondissement des théories économiques, analyse statistique et mécanismes de développement durable.</p>
                     </div>
                 </div>
 
@@ -311,11 +384,11 @@
                     <div class="formation-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="formation-content">
                         <div class="formation-header">
-                            <h3>Baccalauréat – Option Commerciale</h3>
+                            <h3 data-i18n="edu-2-title">Baccalauréat – Option Commerciale</h3>
                             <span class="formation-date">2023</span>
                         </div>
-                        <p class="formation-institution">École Révérend Kim – Kinshasa</p>
-                        <p class="formation-details">Mention : Bien. Spécialisation en gestion commerciale, comptabilité et économie d'entreprise.</p>
+                        <p class="formation-institution" data-i18n="edu-2-inst">École Révérend Kim – Kinshasa</p>
+                        <p class="formation-details" data-i18n="edu-2-desc">Mention : Bien. Spécialisation en gestion commerciale, comptabilité et économie d'entreprise.</p>
                     </div>
                 </div>
             </div>
@@ -325,7 +398,7 @@
     <!-- 6. Langues -->
     <section id="languages" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Langues</h2>
+            <h2 class="section-title" data-i18n="lang-title">Langues</h2>
             <div class="skills-grid">
                 <!-- Français -->
                 <div class="skill-card lang-card" data-aos="fade-up">
@@ -339,8 +412,8 @@
                             <span class="lang-percent">100%</span>
                         </div>
                     </div>
-                    <h3>Français</h3>
-                    <span class="badge">COURANT</span>
+                    <h3 data-i18n="lang-1">Français</h3>
+                    <span class="badge" data-i18n="lang-fluent">COURANT</span>
                 </div>
 
                 <!-- Anglais -->
@@ -355,7 +428,7 @@
                             <span class="lang-percent">45%</span>
                         </div>
                     </div>
-                    <h3>Anglais</h3>
+                    <h3 data-i18n="lang-2">Anglais</h3>
                     <span class="badge">A2</span>
                 </div>
 
@@ -371,8 +444,8 @@
                             <span class="lang-percent">100%</span>
                         </div>
                     </div>
-                    <h3>Lingala</h3>
-                    <span class="badge">COURANT</span>
+                    <h3 data-i18n="lang-3">Lingala</h3>
+                    <span class="badge" data-i18n="lang-fluent">COURANT</span>
                 </div>
             </div>
         </div>
@@ -381,14 +454,15 @@
     <!-- 7. CV -->
     <section id="cv" class="section bg-dark">
         <div class="container" style="text-align: center;">
-            <h2 class="section-title" style="color: var(--primary-color);">CURRICULUM VITAE</h2>
+            <h2 class="section-title" style="color: var(--primary-color);" data-i18n="cv-title">CURRICULUM VITAE</h2>
             <div class="cv-showcase" data-aos="zoom-in">
                 <div class="cv-card">
                     <i class="fa-solid fa-file-pdf cv-icon"></i>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">CURRICULUM VITAE</h3>
-                    <p>Découvrez mon parcours détaillé, mes certifications et mes réalisations académiques en un coup d'œil.</p>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="cv-title">CURRICULUM VITAE</h3>
+                    <p data-i18n="cv-desc">Découvrez mon parcours détaillé, mes certifications et mes réalisations académiques en un coup d'œil.</p>
                     <div class="download-link">
-                        <a href="CV PHOENIX TEST.pdf" download class="btn shadow-sm">Télécharger mon CV (PDF)</a>
+                        <a href="assets/docs/CV PHOENIX TEST.pdf" download class="btn shadow-sm" data-i18n="cv-download">Télécharger mon CV (PDF)</a>
+                        <a href="assets/docs/CV PHOENIX TEST.pdf" target="_blank" class="btn btn-secondary shadow-sm" data-i18n="cv-preview">Aperçu rapide</a>
                     </div>
                 </div>
             </div>
@@ -406,43 +480,43 @@
             <i class="fas fa-headphones floating-icon" style="top: 45%; left: 92%; opacity: 0.1;"></i>
         </div>
         <div class="container">
-            <h2 class="section-title">Centres d'Intérêt</h2>
+            <h2 class="section-title" data-i18n="int-title">Centres d'Intérêt</h2>
             <div class="interests-grid">
                 <!-- Cinéma -->
                 <div class="interest-card" data-aos="zoom-in" data-aos-delay="0">
                     <div class="interest-icon"><i class="fa-solid fa-film"></i></div>
-                    <h3>Cinéma</h3>
-                    <p>Passionné par le septième art, l'analyse cinématographique et la narration visuelle.</p>
+                    <h3 data-i18n="int-1-title">Cinéma</h3>
+                    <p data-i18n="int-1-desc">Passionné par le septième art, l'analyse cinématographique et la narration visuelle.</p>
                 </div>
                 <!-- Technologie & IA -->
                 <div class="interest-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="interest-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Intelligence Artificielle</h3>
-                    <p>Veille active sur les innovations technologiques et l'impact de l'IA dans l'économie.</p>
+                    <h3 data-i18n="int-2-title">Intelligence Artificielle</h3>
+                    <p data-i18n="int-2-desc">Veille active sur les innovations technologiques et l'impact de l'IA dans l'économie.</p>
                 </div>
                 <!-- Football -->
                 <div class="interest-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="interest-icon"><i class="fa-solid fa-futbol"></i></div>
-                    <h3>Football</h3>
-                    <p>Passion pour le ballon rond. Esprit d'équipe, stratégie et résilience sur le terrain.</p>
+                    <h3 data-i18n="int-3-title">Football</h3>
+                    <p data-i18n="int-3-desc">Passion pour le ballon rond. Esprit d'équipe, stratégie et résilience sur le terrain.</p>
                 </div>
                 <!-- Musique -->
                 <div class="interest-card" data-aos="zoom-in" data-aos-delay="250">
                     <div class="interest-icon"><i class="fa-solid fa-music"></i></div>
-                    <h3>Musique</h3>
-                    <p>Exploration de divers genres musicaux et intérêt pour la composition et le rythme.</p>
+                    <h3 data-i18n="int-4-title">Musique</h3>
+                    <p data-i18n="int-4-desc">Exploration de divers genres musicaux et intérêt pour la composition et le rythme.</p>
                 </div>
                 <!-- Lecture -->
                 <div class="interest-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="interest-icon"><i class="fa-solid fa-book-open"></i></div>
-                    <h3>Lecture</h3>
-                    <p>Lectures centrées sur le développement personnel et les actualités économiques mondiales.</p>
+                    <h3 data-i18n="int-5-title">Lecture</h3>
+                    <p data-i18n="int-5-desc">Lectures centrées sur le développement personnel et les actualités économiques mondiales.</p>
                 </div>
                 <!-- Musculation -->
                 <div class="interest-card" data-aos="zoom-in" data-aos-delay="350">
                     <div class="interest-icon"><i class="fa-solid fa-dumbbell"></i></div>
-                    <h3>Musculation</h3>
-                    <p>Discipline et dépassement de soi. Travail sur la force physique et la persévérance au quotidien.</p>
+                    <h3 data-i18n="int-6-title">Musculation</h3>
+                    <p data-i18n="int-6-desc">Discipline et dépassement de soi. Travail sur la force physique et la persévérance au quotidien.</p>
                 </div>
             </div>
         </div>
@@ -451,8 +525,8 @@
     <!-- 9. Contact -->
     <section id="contact" class="section bg-light">
         <div class="container contact-container" style="text-align: center;">
-            <h2 class="section-title">Me Contacter</h2>
-            <p class="contact-intro" style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            <h2 class="section-title" data-i18n="contact-title">Me Contacter</h2>
+            <p class="contact-intro" style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;" data-i18n="contact-desc">
                 Disponible pour des projets innovants, des collaborations créatives ou toute opportunité passionnante.
             </p>
 
@@ -477,9 +551,39 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Beni Makiese. Tous droits réservés.</p>
+            <p data-i18n="footer-text">&copy; 2026 Beni Makiese. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <div class="modal-header-info">
+                    <h2 id="modal-title"></h2>
+                    <div class="modal-tags" id="modal-tags"></div>
+                </div>
+                <div class="modal-details">
+                    <div class="modal-section">
+                        <h4 data-i18n="modal-problem-title">Problématique</h4>
+                        <p id="modal-problem"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h4 data-i18n="modal-solution-title">Solution</h4>
+                        <p id="modal-solution"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h4 data-i18n="modal-result-title">Résultat</h4>
+                        <p id="modal-result"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" target="_blank" id="modal-link" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Animation Libraries -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
@@ -490,7 +594,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

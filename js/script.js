@@ -1,5 +1,255 @@
 const isLocalFile = window.location.protocol === 'file:';
 
+// --- Internationalization (i18n) ---
+const translations = {
+    fr: {
+        "nav-home": "Accueil",
+        "nav-about": "À Propos",
+        "nav-projects": "Projets",
+        "nav-blog": "Réflexions",
+        "nav-experiences": "Expériences",
+        "nav-skills": "Compétences",
+        "nav-contact": "Contact",
+        "hero-subtitle": "Analyse économique guidée par l’IA. Rigueur académique, vision technologique.",
+        "hero-intro": "Je suis Beni. Bienvenue sur mon portfolio.",
+        "hero-btn": "Voir mon parcours",
+        "about-title": "À propos de moi",
+        "about-q1": "Qui suis-je ?",
+        "about-p1": "Je suis un étudiant en économie curieux et déterminé. Au-delà des chiffres, je cherche à comprendre les mécanismes qui régissent nos échanges et notre société.",
+        "about-q2": "Mon objectif",
+        "about-p2": "Devenir un acteur clé dans l'analyse économique et la gestion de projets, en apportant une vision claire et structurée.",
+        "about-q3": "Ma philosophie",
+        "about-p3": "Authentique, calme et confiant. Je crois en la valeur du travail bien fait et de la rigueur.",
+        "exp-title": "Expériences",
+        "exp-1-title": "Stage | D.G.I",
+        "exp-1-desc": "Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.",
+        "exp-2-title": "Job Étudiant | L.A.C",
+        "exp-2-desc": "Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.",
+        "skills-title": "Compétences",
+        "skill-1-title": "Statistiques & Excel",
+        "skill-1-desc": "Traitement de données complexes, tableaux croisés dynamiques, modélisation et analyse prédictive.",
+        "skill-2-title": "Outils Numériques",
+        "skill-2-desc": "Maîtrise des environnements de travail digitaux et des outils de productivité modernes.",
+        "skill-3-title": "Model Context Protocol (MCP)",
+        "skill-3-desc": "Expertise dans l'interopérabilité des données et la connexion de l'IA aux outils externes via serveurs MCP.",
+        "skill-4-title": "AI Agents & Claude Code",
+        "skill-4-desc": "Développement de workflows autonomes et intégration de Claude Code pour l'optimisation des tâches complexes.",
+        "skill-5-title": "Claude 101",
+        "skill-5-desc": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.",
+        "skill-6-title": "AI Fluency & Collaboration",
+        "skill-6-desc": "Collaboration responsable homme-machine et expertise en Prompt Engineering pour des résultats de haute précision.",
+        "edu-title": "Formation",
+        "edu-1-title": "Licence 2 (L2) en Économie et Développement",
+        "edu-1-date": "En cours",
+        "edu-1-inst": "Université Catholique du Congo (UCC) – Kinshasa",
+        "edu-1-desc": "Faculté d’Économie et Développement. Approfondissement des théories économiques, analyse statistique et mécanismes de développement durable.",
+        "edu-2-title": "Baccalauréat – Option Commerciale",
+        "edu-2-inst": "École Révérend Kim – Kinshasa",
+        "edu-2-desc": "Mention : Bien. Spécialisation en gestion commerciale, comptabilité et économie d'entreprise.",
+        "lang-title": "Langues",
+        "lang-1": "Français",
+        "lang-2": "Anglais",
+        "lang-3": "Lingala",
+        "lang-fluent": "COURANT",
+        "cv-title": "CURRICULUM VITAE",
+        "cv-desc": "Découvrez mon parcours détaillé, mes certifications et mes réalisations académiques en un coup d'œil.",
+        "cv-download": "Télécharger mon CV (PDF)",
+        "cv-preview": "Aperçu rapide",
+        "int-title": "Centres d'Intérêt",
+        "int-1-title": "Cinéma",
+        "int-1-desc": "Passionné par le septième art, l'analyse cinématographique et la narration visuelle.",
+        "int-2-title": "Intelligence Artificielle",
+        "int-2-desc": "Veille active sur les innovations technologiques et l'impact de l'IA dans l'économie.",
+        "int-3-title": "Football",
+        "int-3-desc": "Passion pour le ballon rond. Esprit d'équipe, stratégie et résilience sur le terrain.",
+        "int-4-title": "Musique",
+        "int-4-desc": "Exploration de divers genres musicaux et intérêt pour la composition et le rythme.",
+        "int-5-title": "Lecture",
+        "int-5-desc": "Lectures centrées sur le développement personnel et les actualités économiques mondiales.",
+        "int-6-title": "Musculation",
+        "int-6-desc": "Discipline et dépassement de soi. Travail sur la force physique et la persévérance au quotidien.",
+        "contact-title": "Me Contacter",
+        "contact-desc": "Disponible pour des projets innovants, des collaborations créatives ou toute opportunité passionnante.",
+        "footer-text": "© 2026 Beni Makiese. Tous droits réservés.",
+        "projects-title": "Projets Académiques",
+        "blog-title": "Réflexions & Analyses",
+        "project-newket-desc": "Plateforme d'achat de billets en ligne, simplifiant l'accès aux événements locaux.",
+        "project-songstory-desc": "Une application interactive pour découvrir l'histoire derrière vos chansons préférées.",
+        "project-allkampus-desc": "Solution centralisée pour la gestion de la vie estudiantine et académique.",
+        "blog-post1-date": "Avril 2026",
+        "blog-post1-title": "L'IA : Menace ou opportunité pour l'économie ?",
+        "blog-post1-desc": "Une analyse sur la transformation des métiers financiers face à l'automatisation.",
+        "blog-post2-date": "Février 2026",
+        "blog-post2-title": "La finance décentralisée (DeFi) : Révolution ou simple bulle ?",
+        "blog-post2-desc": "Une plongée critique dans les mécanismes de la DeFi et ses implications bancaires.",
+        "blog-post3-date": "Décembre 2025",
+        "blog-post3-title": "Analyse de données : La rigueur avant tout",
+        "blog-post3-desc": "Pourquoi la propreté des données est plus cruciale que l'algorithme choisi.",
+        "blog-post4-date": "Septembre 2025",
+        "blog-post4-title": "L'économie de l'attention à l'ère des algorithmes",
+        "blog-post4-desc": "Comment les plateformes technologiques redéfinissent la création de valeur.",
+        "blog-post5-date": "Juin 2025",
+        "blog-post5-title": "L'impact des biais cognitifs dans la modélisation",
+        "blog-post5-desc": "Pourquoi les prédictions échouent face à l'irrationalité du comportement humain.",
+        "blog-post6-date": "Mars 2025",
+        "blog-post6-title": "Mon parcours d'autodidacte en tech",
+        "blog-post6-desc": "Comment j'ai combiné mes études d'économie avec l'apprentissage du code.",
+        "blog-post7-date": "Novembre 2024",
+        "blog-post7-title": "Pourquoi coder m'a rendu meilleur en économie",
+        "blog-post7-desc": "L'approche systémique du génie logiciel appliquée à la macroéconomie.",
+        "modal-problem-title": "Problématique",
+        "modal-solution-title": "Solution",
+        "modal-result-title": "Résultat",
+        "modal-see-project": "Voir le projet",
+        "blog-see-more": "Voir plus d'articles",
+        "blog-see-less": "Voir moins d'articles"
+    },
+    en: {
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-projects": "Projects",
+        "nav-blog": "Reflections",
+        "nav-experiences": "Experience",
+        "nav-skills": "Skills",
+        "nav-contact": "Contact",
+        "hero-subtitle": "AI-guided economic analysis. Academic rigor, technological vision.",
+        "hero-intro": "I am Beni. Welcome to my portfolio.",
+        "hero-btn": "See my journey",
+        "about-title": "About me",
+        "about-q1": "Who am I?",
+        "about-p1": "I am a curious and determined economics student. Beyond numbers, I seek to understand the mechanisms governing our exchanges and our society.",
+        "about-q2": "My objective",
+        "about-p2": "To become a key player in economic analysis and project management, bringing a clear and structured vision.",
+        "about-q3": "My philosophy",
+        "about-p3": "Authentic, calm, and confident. I believe in the value of work well done and rigor.",
+        "exp-title": "Experience",
+        "exp-1-title": "Internship | D.G.I",
+        "exp-1-desc": "Professional immersion within the General Directorate of Taxes. Observation of tax and administrative procedures.",
+        "exp-2-title": "Student Job | L.A.C",
+        "exp-2-desc": "Experience in cash management and customer relations. Developing rigor and responsibility.",
+        "skills-title": "Skills",
+        "skill-1-title": "Statistics & Excel",
+        "skill-1-desc": "Complex data processing, pivot tables, predictive modeling and analysis.",
+        "skill-2-title": "Digital Tools",
+        "skill-2-desc": "Mastery of digital workspaces and modern productivity tools.",
+        "skill-3-title": "Model Context Protocol (MCP)",
+        "skill-3-desc": "Expertise in data interoperability and connecting AI to external tools via MCP servers.",
+        "skill-4-title": "AI Agents & Claude Code",
+        "skill-4-desc": "Development of autonomous workflows and integration of Claude Code for complex tasks optimization.",
+        "skill-5-title": "Claude 101",
+        "skill-5-desc": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning.",
+        "skill-6-title": "AI Fluency & Collaboration",
+        "skill-6-desc": "Responsible human-machine collaboration and expertise in Prompt Engineering for high-precision results.",
+        "edu-title": "Education",
+        "edu-1-title": "Bachelor (L2) in Economics and Development",
+        "edu-1-date": "In progress",
+        "edu-1-inst": "Catholic University of Congo (UCC) – Kinshasa",
+        "edu-1-desc": "Faculty of Economics and Development. Deepening of economic theories, statistical analysis and sustainable development mechanisms.",
+        "edu-2-title": "High School Diploma – Commercial Option",
+        "edu-2-inst": "Reverend Kim School – Kinshasa",
+        "edu-2-desc": "Honors: Good. Specialization in commercial management, accounting and business economics.",
+        "lang-title": "Languages",
+        "lang-1": "French",
+        "lang-2": "English",
+        "lang-3": "Lingala",
+        "lang-fluent": "FLUENT",
+        "cv-title": "CURRICULUM VITAE",
+        "cv-desc": "Discover my detailed journey, my certifications and academic achievements at a glance.",
+        "cv-download": "Download my CV (PDF)",
+        "cv-preview": "Quick Preview",
+        "int-title": "Interests",
+        "int-1-title": "Cinema",
+        "int-1-desc": "Passionate about the seventh art, film analysis and visual storytelling.",
+        "int-2-title": "Artificial Intelligence",
+        "int-2-desc": "Active monitoring of technological innovations and the impact of AI in the economy.",
+        "int-3-title": "Football",
+        "int-3-desc": "Passion for the round ball. Team spirit, strategy and resilience on the field.",
+        "int-4-title": "Music",
+        "int-4-desc": "Exploration of various musical genres and interest in composition and rhythm.",
+        "int-5-title": "Reading",
+        "int-5-desc": "Readings centered on personal development and global economic news.",
+        "int-6-title": "Bodybuilding",
+        "int-6-desc": "Discipline and pushing limits. Daily work on physical strength and perseverance.",
+        "contact-title": "Contact Me",
+        "contact-desc": "Available for innovative projects, creative collaborations, or any exciting opportunity.",
+        "footer-text": "© 2026 Beni Makiese. All rights reserved.",
+        "projects-title": "Academic Projects",
+        "blog-title": "Reflections & Insights",
+        "project-newket-desc": "Online ticketing platform simplifying access to local events.",
+        "project-songstory-desc": "Interactive app to discover the stories behind your favorite songs.",
+        "project-allkampus-desc": "Centralized solution for student and academic life management.",
+        "blog-post1-date": "April 2026",
+        "blog-post1-title": "AI: Threat or Opportunity for the Economy?",
+        "blog-post1-desc": "An analysis of the transformation of financial professions facing automation.",
+        "blog-post2-date": "February 2026",
+        "blog-post2-title": "DeFi: Revolution or Simple Bubble?",
+        "blog-post2-desc": "A critical dive into DeFi mechanisms and their banking implications.",
+        "blog-post3-date": "December 2025",
+        "blog-post3-title": "Data Analysis: Rigor Above All",
+        "blog-post3-desc": "Why data cleanliness is more crucial than the chosen algorithm.",
+        "blog-post4-date": "September 2025",
+        "blog-post4-title": "The Attention Economy in the Age of Algorithms",
+        "blog-post4-desc": "How tech platforms are redefining value creation.",
+        "blog-post5-date": "June 2025",
+        "blog-post5-title": "The Impact of Cognitive Biases in Modeling",
+        "blog-post5-desc": "Why predictions fail against the irrationality of human behavior.",
+        "blog-post6-date": "March 2025",
+        "blog-post6-title": "My Self-Taught Journey in Tech",
+        "blog-post6-desc": "How I combined my economics studies with learning to code.",
+        "blog-post7-date": "November 2024",
+        "blog-post7-title": "Why Coding Made Me Better at Economics",
+        "blog-post7-desc": "The systemic approach of software engineering applied to macroeconomics.",
+        "modal-problem-title": "Problem",
+        "modal-solution-title": "Solution",
+        "modal-result-title": "Result",
+        "modal-see-project": "View Project",
+        "blog-see-more": "See more articles",
+        "blog-see-less": "See fewer articles"
+    }
+};
+
+const projectData = {
+    newket: {
+        title: "NewKet",
+        tags: ["Next.js", "Stripe", "Firebase"],
+        problem: { fr: "Difficulté d'accès aux billets pour les événements locaux.", en: "Difficulty accessing tickets for local events." },
+        solution: { fr: "Interface fluide avec paiement sécurisé Stripe.", en: "Fluid interface with secure Stripe payment." },
+        result: { fr: "+500 utilisateurs lors de la phase de test.", en: "+500 users during test phase." },
+        link: "https://newket.vercel.app/"
+    },
+    songstory: {
+        title: "SongStory",
+        tags: ["Next.js", "Spotify API", "GSAP"],
+        problem: { fr: "Manque de contexte historique sur les morceaux écoutés.", en: "Lack of historical context on listened tracks." },
+        solution: { fr: "Extraction automatisée via Spotify et OpenAI.", en: "Automated extraction via Spotify and OpenAI." },
+        result: { fr: "Expérience utilisateur immersive primée.", en: "Award-winning immersive user experience." },
+        link: "https://songstoryv3.vercel.app/"
+    },
+    allkampus: {
+        title: "AllKampus",
+        tags: ["React", "Supabase", "Google API"],
+        problem: { fr: "Fragmentation des outils de gestion universitaire.", en: "Fragmentation of university management tools." },
+        solution: { fr: "Dashboard unique pour cours, examens et vie sociale.", en: "Single dashboard for classes, exams, and social life." },
+        result: { fr: "Adopté par 3 associations étudiantes.", en: "Adopted by 3 student associations." },
+        link: "https://allkampus-phx.vercel.app/"
+    }
+};
+
+let currentLang = localStorage.getItem('lang') || 'fr';
+
+function updateLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+    document.getElementById('language-toggle').querySelector('.lang-text').textContent = lang === 'fr' ? 'EN' : 'FR';
+    localStorage.setItem('lang', lang);
+    currentLang = lang;
+}
+
+
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -560,6 +810,79 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
+    // --- Modal Logic ---
+    const modal = document.getElementById('project-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const modalOverlay = modal.querySelector('.modal-overlay');
+
+    const openModal = (projectId) => {
+        const data = projectData[projectId];
+        if (!data) return;
+
+        document.getElementById('modal-title').textContent = data.title;
+        document.getElementById('modal-tags').innerHTML = data.tags.map(t => `<span class="tag">${t}</span>`).join('');
+        document.getElementById('modal-problem').textContent = data.problem[currentLang];
+        document.getElementById('modal-solution').textContent = data.solution[currentLang];
+        document.getElementById('modal-result').textContent = data.result[currentLang];
+        const modalLink = document.getElementById('modal-link');
+        modalLink.href = data.link;
+        modalLink.innerHTML = `${translations[currentLang]['modal-see-project']} <i class="fa-solid fa-arrow-up-right-from-square"></i>`;
+
+        modal.classList.add('active');
+        document.body.classList.add('no-scroll');
+        lenis.stop();
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        lenis.start();
+    };
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card.getAttribute('data-project')));
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // --- Language Toggle Logic ---
+    const langBtn = document.getElementById('language-toggle');
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            updateLanguage(newLang);
+        });
+        updateLanguage(currentLang); // Initialize
+    }
+
+    // --- Blog Toggle Logic ---
+    const blogMoreBtn = document.getElementById('blog-more-btn');
+    if (blogMoreBtn) {
+        const hiddenBlogs = document.querySelectorAll('.blog-card.hidden-blog');
+        let isExpanded = false;
+
+        blogMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            isExpanded = !isExpanded;
+            
+            hiddenBlogs.forEach(blog => {
+                if (isExpanded) {
+                    blog.style.display = 'flex';
+                    // Re-trigger AOS slightly
+                    blog.classList.add('aos-animate');
+                } else {
+                    blog.style.display = 'none';
+                }
+            });
+
+            blogMoreBtn.setAttribute('data-i18n', isExpanded ? 'blog-see-less' : 'blog-see-more');
+            blogMoreBtn.textContent = translations[currentLang][isExpanded ? 'blog-see-less' : 'blog-see-more'];
+            // Refresh ScrollTrigger to update layouts
+            if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+        });
+    }
 });
 
 
