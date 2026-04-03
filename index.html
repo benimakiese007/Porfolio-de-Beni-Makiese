@@ -63,9 +63,7 @@
     <div id="particles-js"></div>
     <div class="custom-cursor"></div>
     <div class="custom-cursor-dot"></div>
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar"></div>
-    </div>
+
 
     <!-- Header / Navbar -->
     <header>
@@ -75,10 +73,13 @@
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active">Accueil</a></li>
                     <li><a href="#about" class="nav-link">À Propos</a></li>
-                    <li><a href="#skills" class="nav-link">Compétences</a></li>
-                    <li><a href="#languages" class="nav-link">Langues</a></li>
-                    <li><a href="#experiences" class="nav-link">Expériences</a></li>
                     <li><a href="#projects" class="nav-link">Projets</a></li>
+                    <li><a href="#experiences" class="nav-link">Expériences</a></li>
+                    <li><a href="#skills" class="nav-link">Compétences</a></li>
+                    <li><a href="#formation" class="nav-link">Formation</a></li>
+                    <li><a href="#languages" class="nav-link">Langues</a></li>
+                    <li><a href="#cv" class="nav-link">CV</a></li>
+                    <li><a href="#interests" class="nav-link">Centres d'Intérêt</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                     <li>
                         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
@@ -116,7 +117,7 @@
         </div>
     </section>
 
-    <!-- 2. À propos de moi -->
+    <!-- 1. À propos de moi -->
     <section id="about" class="section bg-light">
         <div class="container">
             <h2>À propos de moi</h2>
@@ -137,8 +138,108 @@
         </div>
     </section>
 
-    <!-- 3. Compétences -->
-    <section id="skills" class="section">
+    <!-- 2. Projets -->
+    <section id="projects" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Projets Académiques</h2>
+            <div class="projects-grid">
+                
+                <!-- Projet 1: NewKet -->
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card-header">
+                        <div class="project-icon icon-blue">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>NewKet</h3>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Stripe</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                        <a href="https://newket.vercel.app/" target="_blank" class="project-link">
+                            <span class="link-text">Voir le Projet</span>
+                            <span class="link-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Projet 2: SongStory -->
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <div class="project-icon icon-purple">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>SongStory</h3>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">GSAP</span>
+                            <span class="tag">Spotify API</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                        <a href="https://songstoryv3.vercel.app/" target="_blank" class="project-link">
+                            <span class="link-text">Voir le Projet</span>
+                            <span class="link-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Projet 3: AllKampus -->
+                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <div class="project-icon icon-yellow">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>AllKampus</h3>
+                        <div class="project-tags">
+                            <span class="tag">Vite</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Supabase</span>
+                            <span class="tag">Google API</span>
+                        </div>
+                        <a href="https://allkampus-phx.vercel.app/" target="_blank" class="project-link">
+                            <span class="link-text">Voir le Projet</span>
+                            <span class="link-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Expériences -->
+    <section id="experiences" class="section">
+        <div class="container">
+            <h2 class="section-title">Expériences</h2>
+            <div class="carousel-wrapper" data-lenis-prevent>
+                <button class="slider-btn prev-btn" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="experiences-list" data-lenis-prevent="true">
+                    <article class="experience-item">
+                        <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3>Stage | D.G.I</h3>
+                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="exp-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3>Job Étudiant | L.A.C</h3>
+                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Compétences -->
+    <section id="skills" class="section bg-light">
         <div class="container">
             <h2>Compétences</h2>
             <div class="skills-grid">
@@ -181,7 +282,41 @@
         </div>
     </section>
 
-    <!-- 3.5. Langues -->
+    <!-- 5. Formation -->
+    <section id="formation" class="section">
+        <div class="container">
+            <h2 class="section-title">Formation</h2>
+            <div class="formation-list">
+                <!-- UCC -->
+                <div class="formation-item" data-aos="fade-up">
+                    <div class="formation-icon"><i class="fa-solid fa-university"></i></div>
+                    <div class="formation-content">
+                        <div class="formation-header">
+                            <h3>Licence 2 (L2) en Économie et Développement</h3>
+                            <span class="formation-date">En cours</span>
+                        </div>
+                        <p class="formation-institution">Université Catholique du Congo (UCC) – Kinshasa</p>
+                        <p class="formation-details">Faculté d’Économie et Développement. Approfondissement des théories économiques, analyse statistique et mécanismes de développement durable.</p>
+                    </div>
+                </div>
+
+                <!-- Ecole Révérend Kim -->
+                <div class="formation-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="formation-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="formation-content">
+                        <div class="formation-header">
+                            <h3>Baccalauréat – Option Commerciale</h3>
+                            <span class="formation-date">2023</span>
+                        </div>
+                        <p class="formation-institution">École Révérend Kim – Kinshasa</p>
+                        <p class="formation-details">Mention : Bien. Spécialisation en gestion commerciale, comptabilité et économie d'entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Langues -->
     <section id="languages" class="section bg-light">
         <div class="container">
             <h2 class="section-title">Langues</h2>
@@ -237,108 +372,14 @@
         </div>
     </section>
 
-    <!-- 4. Expériences -->
-    <section id="experiences" class="section">
-        <div class="container">
-            <h2 class="section-title">Expériences</h2>
-            <div class="carousel-wrapper" data-lenis-prevent>
-                <button class="slider-btn prev-btn" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="slider-btn next-btn" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
-                <div class="experiences-list" data-lenis-prevent="true">
-                    <article class="experience-item">
-                        <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3>Stage à la DGI</h3>
-                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
-                    </article>
-
-                    <article class="experience-item">
-                        <div class="exp-icon"><i class="fa-solid fa-user-tie"></i></div>
-                        <h3>Job Étudiant</h3>
-                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
-                    </article>
-
-                    <!-- Duplicated for infinite scroll -->
-                    <article class="experience-item">
-                        <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3>Stage à la DGI</h3>
-                        <p>Immersion professionnelle au sein de la Direction Générale des Impôts. Observation des procédures fiscales et administratives.</p>
-                    </article>
-
-                    <article class="experience-item">
-                        <div class="exp-icon"><i class="fa-solid fa-user-tie"></i></div>
-                        <h3>Job Étudiant</h3>
-                        <p>Expérience en gestion de caisse et relation client. Développement de la rigueur et de la responsabilité.</p>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Projets -->
-    <section id="projects" class="section bg-dark">
-        <div class="container">
-            <h2 class="section-title">Projets Académiques</h2>
-            <div class="projects-grid">
-                
-                <!-- Projet 1: NewKet -->
-                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="card-header">
-                        <div class="project-icon icon-blue">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3>NewKet</h3>
-                        <p>
-                            Plateforme e-commerce marketplace complète. Intègre une puissante gestion des vendeurs, des flux de produits en temps réel et un tableau de bord d'administration hautement sécurisé (Architecture NOVA-V2).
-                        </p>
-                        <a href="https://newket.vercel.app/" target="_blank" class="project-link">Voir le Projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Projet 2: SongStory -->
-                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-header">
-                        <div class="project-icon icon-purple">
-                            <i class="fa-solid fa-music"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3>SongStory</h3>
-                        <p>
-                            Application web interactive autour de l'univers musical. Offre une expérience utilisateur immersive et fluide avec des interfaces ultra-modernes et interactives.
-                        </p>
-                        <a href="https://songstoryv3.vercel.app/" target="_blank" class="project-link">Voir le Projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Projet 3: AllKampus -->
-                <article class="project-card premium-project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-header">
-                        <div class="project-icon icon-yellow">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3>AllKampus</h3>
-                        <p>
-                            Idéation et développement d'une solution numérique ciblant les étudiants. L'objectif est de centraliser les services et faciliter l'échange sur les campus universitaires.
-                        </p>
-                        <a href="https://allkampus-phx.vercel.app/" target="_blank" class="project-link">Voir le Projet <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. CV -->
+    <!-- 7. CV -->
     <section id="cv" class="section bg-dark">
         <div class="container" style="text-align: center;">
-            <h2 class="section-title">Mon Parcours</h2>
+            <h2 class="section-title" style="color: var(--primary-color);">CURRICULUM VITAE</h2>
             <div class="cv-showcase" data-aos="zoom-in">
                 <div class="cv-card">
                     <i class="fa-solid fa-file-pdf cv-icon"></i>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">CURRICULUM VITAE</h3>
                     <p>Découvrez mon parcours détaillé, mes certifications et mes réalisations académiques en un coup d'œil.</p>
                     <div class="download-link">
                         <a href="CV PHOENIX TEST.pdf" download class="btn shadow-sm">Télécharger mon CV (PDF)</a>
@@ -348,8 +389,53 @@
         </div>
     </section>
 
-    <!-- 6. Contact -->
-    <section id="contact" class="section">
+    <!-- 8. Centres d'Intérêt -->
+    <section id="interests" class="section">
+        <div class="container">
+            <h2 class="section-title">Centres d'Intérêt</h2>
+            <div class="interests-grid">
+                <!-- Cinéma -->
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="interest-icon"><i class="fa-solid fa-film"></i></div>
+                    <h3>Cinéma</h3>
+                    <p>Passionné par le septième art, l'analyse cinématographique et la narration visuelle.</p>
+                </div>
+                <!-- Technologie & IA -->
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="interest-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Intelligence Artificielle</h3>
+                    <p>Veille active sur les innovations technologiques et l'impact de l'IA dans l'économie.</p>
+                </div>
+                <!-- Football -->
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="interest-icon"><i class="fa-solid fa-futbol"></i></div>
+                    <h3>Football</h3>
+                    <p>Passion pour le ballon rond. Esprit d'équipe, stratégie et résilience sur le terrain.</p>
+                </div>
+                <!-- Musique -->
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="interest-icon"><i class="fa-solid fa-music"></i></div>
+                    <h3>Musique</h3>
+                    <p>Exploration de divers genres musicaux et intérêt pour la composition et le rythme.</p>
+                </div>
+                <!-- Lecture -->
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="interest-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>Lecture</h3>
+                    <p>Lectures centrées sur le développement personnel et les actualités économiques mondiales.</p>
+                </div>
+                <!-- Musculation -->
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="interest-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Musculation</h3>
+                    <p>Discipline et dépassement de soi. Travail sur la force physique et la persévérance au quotidien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Contact -->
+    <section id="contact" class="section bg-light">
         <div class="container contact-container" style="text-align: center;">
             <h2 class="section-title">Me Contacter</h2>
             <p class="contact-intro" style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">

@@ -34,10 +34,6 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 
-    // Scroll Progress Update
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-    const scrollBar = document.querySelector('.scroll-progress-bar');
-    if (scrollBar) scrollBar.style.width = scrollPercent + '%';
 });
 
 // Update active nav link based on section
@@ -112,6 +108,18 @@ document.addEventListener('mousemove', (e) => {
 interactiveElements.forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+});
+
+// Project Cards Spotlight Effect
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mouse-x', `${x}%`);
+        card.style.setProperty('--mouse-y', `${y}%`);
+    });
 });
 
 // 4. Magnetic Effect (Improved)
@@ -192,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (section.id === 'home') return;
 
         const heading = section.querySelector('h2');
-        const cards = section.querySelectorAll('.skill-card, .experience-item, .project-card, .about-text > *');
+        const cards = section.querySelectorAll('.skill-card, .experience-item, .project-card, .interest-card, .about-text > *');
 
         if (heading) {
             gsap.from(heading, {
@@ -305,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true });
 
     if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
-        VanillaTilt.init(document.querySelectorAll(".skill-card, .experience-item, .project-card"), {
+        VanillaTilt.init(document.querySelectorAll(".skill-card, .experience-item, .project-card, .interest-card"), {
             max: 15,
             speed: 400,
             glare: true,
