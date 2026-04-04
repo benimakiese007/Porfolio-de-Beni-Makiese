@@ -212,25 +212,25 @@ const projectData = {
     newket: {
         title: "NewKet",
         tags: ["Next.js", "Stripe", "Firebase"],
-        problem: { fr: "Difficulté d'accès aux billets pour les événements locaux.", en: "Difficulty accessing tickets for local events." },
-        solution: { fr: "Interface fluide avec paiement sécurisé Stripe.", en: "Fluid interface with secure Stripe payment." },
-        result: { fr: "+500 utilisateurs lors de la phase de test.", en: "+500 users during test phase." },
+        problem: { fr: "Difficulté à centraliser et organiser efficacement des idées inspirantes et des contenus motivants.", en: "Difficulty in centralizing and efficiently organizing inspiring ideas and motivating content." },
+        solution: { fr: "Création d'une plateforme web structurée permettant de classer, publier et partager des citations par thèmes avec interaction utilisateur.", en: "Creation of a structured web platform allowing to classify, publish, and share quotes by themes with user interaction." },
+        result: { fr: "Une expérience fluide qui favorise l'engagement et transforme l'inspiration en habitude quotidienne.", en: "A smooth experience that fosters engagement and turns inspiration into a daily habit." },
         link: "https://newket.vercel.app/"
     },
     songstory: {
         title: "SongStory",
         tags: ["Next.js", "Spotify API", "GSAP"],
-        problem: { fr: "Manque de contexte historique sur les morceaux écoutés.", en: "Lack of historical context on listened tracks." },
-        solution: { fr: "Extraction automatisée via Spotify et OpenAI.", en: "Automated extraction via Spotify and OpenAI." },
-        result: { fr: "Expérience utilisateur immersive primée.", en: "Award-winning immersive user experience." },
+        problem: { fr: "Les auditeurs ne comprennent pas toujours les significations profondes et les références cachées dans les paroles des chansons.", en: "Listeners don't always understand the deep meanings and hidden references in song lyrics." },
+        solution: { fr: "Développement d'un concept de contenu qui analyse chaque ligne de chanson pour en révéler le sens, les métaphores et le contexte culturel.", en: "Development of a content concept that analyzes every song line to reveal its meaning, metaphors, and cultural context." },
+        result: { fr: "Une meilleure compréhension des œuvres musicales et une audience plus engagée et fidèle.", en: "A better understanding of musical works and a more engaged and loyal audience." },
         link: "https://songstoryv3.vercel.app/"
     },
     allkampus: {
         title: "AllKampus",
         tags: ["React", "Supabase", "Google API"],
-        problem: { fr: "Fragmentation des outils de gestion universitaire.", en: "Fragmentation of university management tools." },
-        solution: { fr: "Dashboard unique pour cours, examens et vie sociale.", en: "Single dashboard for classes, exams, and social life." },
-        result: { fr: "Adopté par 3 associations étudiantes.", en: "Adopted by 3 student associations." },
+        problem: { fr: "Manque d'accès simple et centralisé aux informations, services et opportunités pour les étudiants.", en: "Lack of simple and centralized access to information, services, and opportunities for students." },
+        solution: { fr: "Mise en place d'une plateforme numérique regroupant ressources académiques, actualités, et services utiles pour la vie estudiantine.", en: "Implementation of a digital platform gathering academic resources, news, and useful services for student life." },
+        result: { fr: "Une gestion plus efficace de la vie universitaire et une amélioration de l'accès à l'information pour les étudiants.", en: "More efficient management of university life and improved access to information for students." },
         link: "https://allkampus-phx.vercel.app/"
     }
 };
@@ -855,6 +855,30 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLanguage(newLang);
         });
         updateLanguage(currentLang); // Initialize
+    }
+
+    // --- Scroll To Top Logic ---
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            // If using Lenis, scroll using Lenis
+            if (typeof lenis !== 'undefined') {
+                lenis.scrollTo(0, { duration: 1.2 });
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
     }
 
     // --- Blog Toggle Logic ---
