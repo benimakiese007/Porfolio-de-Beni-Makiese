@@ -63,7 +63,7 @@ export function Hero() {
 
                         <MagneticButton>
                             <a
-                                href="/cv-beni.pdf"
+                                href="/Beni Makiese CV.pdf"
                                 download
                                 className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-full px-8 h-12 text-base group" })}
                             >

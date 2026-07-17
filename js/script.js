@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', (e) => {
             const moveX = (e.clientX / window.innerWidth - 0.5) * 30;
             const moveY = (e.clientY / window.innerHeight - 0.5) * 30;
-            gsap.to('.floating-icon', {
+            gsap.to(floatingIcons, {
                 x: (i) => `+=${moveX}`,
                 y: (i) => `+=${moveY}`,
                 duration: 2,
