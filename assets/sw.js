@@ -1,7 +1,7 @@
 const CACHE_NAME = 'beni-portfolio-v1';
 const urlsToCache = [
     '/',
-    '/manifest.json'
+    '/assets/manifest.json'
 ];
 
 // Install event
