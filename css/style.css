@@ -242,11 +242,17 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 15%; /* Focus on the upper part where the head is */
+    transform: scale(1.4); /* Zoom in to crop the body */
     transition: transform 0.6s ease;
+    /* Empêche le drag et la sélection de l'image */
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .image-wrapper:hover img {
-    transform: scale(1.1);
+    transform: scale(1.55);
 }
 
 @keyframes morph {
@@ -328,8 +334,9 @@ header.scrolled {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 2rem;
     padding: 0.8rem 2rem;
     background: var(--navbar-bg);
     backdrop-filter: blur(12px);
@@ -360,6 +367,7 @@ header.scrolled .navbar {
 .nav-links {
     display: flex;
     gap: 1.2rem;
+    align-items: center;
 }
 
 .nav-link {
@@ -859,7 +867,7 @@ header.scrolled .navbar {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
-    color: var(--text-muted);
+    color: #000;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -871,7 +879,7 @@ header.scrolled .navbar {
 }
 
 .project-card p {
-    color: var(--text-muted);
+    color: #000;
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 2rem;
