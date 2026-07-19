@@ -66,6 +66,145 @@
 </head>
 
 <body>
+
+    <!-- ===== MODAL iOS DOWNLOAD INSTRUCTIONS ===== -->
+    <div id="ios-modal-overlay" onclick="closeIOSModal()" style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 99999;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+    ">
+        <div onclick="event.stopPropagation()" style="
+            background: var(--container-bg, #fff);
+            border: 1px solid rgba(0,86,179,0.25);
+            border-radius: 20px;
+            padding: 2rem 1.75rem;
+            max-width: 380px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            animation: iosModalIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+        ">
+            <!-- Icône -->
+            <div style="text-align:center; margin-bottom:1.25rem;">
+                <div style="
+                    width:60px; height:60px;
+                    background: linear-gradient(135deg,#0056b3,#00bfff);
+                    border-radius:16px;
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    box-shadow: 0 8px 20px rgba(0,86,179,0.35);
+                ">
+                    <i class="fa-solid fa-arrow-up-from-bracket" style="color:#fff;font-size:1.6rem;"></i>
+                </div>
+            </div>
+
+            <!-- Titre -->
+            <h3 style="
+                text-align:center;
+                color: var(--primary-color,#0056b3);
+                font-size:1.1rem;
+                font-weight:700;
+                margin-bottom:0.5rem;
+            ">Télécharger sur iPhone / iPad</h3>
+            <p style="
+                text-align:center;
+                color: var(--text-muted,#666);
+                font-size:0.85rem;
+                margin-bottom:1.5rem;
+                line-height:1.5;
+            ">iOS ne permet pas le téléchargement direct depuis une app web.<br>Suis ces étapes simples :</p>
+
+            <!-- Étapes -->
+            <div style="display:flex;flex-direction:column;gap:0.85rem;margin-bottom:1.75rem;">
+
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                    <div style="
+                        min-width:32px; height:32px;
+                        background:linear-gradient(135deg,#0056b3,#00bfff);
+                        border-radius:50%;
+                        display:flex; align-items:center; justify-content:center;
+                        font-weight:700; color:#fff; font-size:0.8rem;
+                    ">1</div>
+                    <span style="color:var(--text-color,#333);font-size:0.88rem;">
+                        Appuie sur <strong>"Aperçu rapide"</strong> pour ouvrir le CV
+                    </span>
+                </div>
+
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                    <div style="
+                        min-width:32px; height:32px;
+                        background:linear-gradient(135deg,#0056b3,#00bfff);
+                        border-radius:50%;
+                        display:flex; align-items:center; justify-content:center;
+                        font-weight:700; color:#fff; font-size:0.8rem;
+                    ">2</div>
+                    <span style="color:var(--text-color,#333);font-size:0.88rem;">
+                        Appuie sur l'icône <strong>Partager</strong> <i class="fa-solid fa-arrow-up-from-bracket" style="color:#0056b3;"></i>
+                    </span>
+                </div>
+
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                    <div style="
+                        min-width:32px; height:32px;
+                        background:linear-gradient(135deg,#0056b3,#00bfff);
+                        border-radius:50%;
+                        display:flex; align-items:center; justify-content:center;
+                        font-weight:700; color:#fff; font-size:0.8rem;
+                    ">3</div>
+                    <span style="color:var(--text-color,#333);font-size:0.88rem;">
+                        Choisis <strong>"Enregistrer dans Fichiers"</strong> <i class="fa-solid fa-folder" style="color:#0056b3;"></i>
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Boutons -->
+            <div style="display:flex;flex-direction:column;gap:0.65rem;">
+                <a href="assets/Beni Makiese CV.pdf" target="_blank"
+                   onclick="closeIOSModal()"
+                   style="
+                    display:block; text-align:center;
+                    background:linear-gradient(135deg,#0056b3,#00bfff);
+                    color:#fff; font-weight:600; font-size:0.9rem;
+                    padding:0.75rem 1rem;
+                    border-radius:12px;
+                    text-decoration:none;
+                    box-shadow:0 4px 14px rgba(0,86,179,0.35);
+                    transition: opacity 0.2s;
+                "
+                   onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+                    <i class="fa-solid fa-eye" style="margin-right:0.4rem;"></i>Ouvrir le CV
+                </a>
+                <button onclick="closeIOSModal()" style="
+                    background: transparent;
+                    border: 1.5px solid rgba(0,86,179,0.3);
+                    color: var(--text-muted,#666);
+                    font-size:0.85rem;
+                    padding:0.65rem 1rem;
+                    border-radius:12px;
+                    cursor:pointer;
+                    transition: border-color 0.2s;
+                ">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes iosModalIn {
+            from { opacity: 0; transform: scale(0.85) translateY(20px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        #ios-modal-overlay.active {
+            display: flex !important;
+        }
+    </style>
     <div id="particles-js"></div>
     <div id="three-canvas-container"></div>
 
@@ -474,7 +613,7 @@
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="cv-title">CURRICULUM VITAE</h3>
                     <p data-i18n="cv-desc">Découvrez mon parcours détaillé, mes certifications et mes réalisations académiques en un coup d'œil.</p>
                     <div class="download-link">
-                        <a href="assets/Beni Makiese CV.pdf" download class="btn shadow-sm" data-i18n="cv-download">Télécharger mon CV (PDF)</a>
+                        <button onclick="downloadCV()" class="btn shadow-sm" data-i18n="cv-download">Télécharger mon CV (PDF)</button>
                         <a href="assets/Beni Makiese CV.pdf" target="_blank" class="btn btn-secondary shadow-sm" data-i18n="cv-preview">Aperçu rapide</a>
                     </div>
                 </div>
@@ -622,6 +761,51 @@
                         console.log('ServiceWorker registration failed: ', err);
                     });
             });
+        }
+
+        // ✅ Téléchargement universel (PC, mobile, PWA)
+        // ─── Détection iOS ───────────────────────────────────────────────────
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        }
+
+        // ─── Modal iOS ───────────────────────────────────────────────────────
+        function openIOSModal()  { document.getElementById('ios-modal-overlay').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeIOSModal() { document.getElementById('ios-modal-overlay').classList.remove('active'); document.body.style.overflow = ''; }
+
+        // ─── Téléchargement universel ────────────────────────────────────────
+        function downloadCV() {
+            // iOS : impossible de forcer le download → afficher le guide
+            if (isIOS()) {
+                openIOSModal();
+                return;
+            }
+
+            const pdfUrl  = 'assets/Beni Makiese CV.pdf';
+            const fileName = 'Beni_Makiese_CV.pdf';
+
+            fetch(pdfUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Fichier introuvable');
+                    return response.blob();
+                })
+                .then(blob => {
+                    // Forcer le MIME type → le browser ne peut pas ouvrir inline
+                    const forcedBlob = new Blob([blob], { type: 'application/octet-stream' });
+                    const blobUrl = URL.createObjectURL(forcedBlob);
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = fileName;
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
+                })
+                .catch(() => {
+                    window.open(pdfUrl, '_blank');
+                });
         }
     </script>
 </body>

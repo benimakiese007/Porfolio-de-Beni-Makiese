@@ -35,7 +35,7 @@ const translations = {
         "skill-4-title": "AI Agents & Claude Code",
         "skill-4-desc": "Développement de workflows autonomes et intégration de Claude Code pour l'optimisation des tâches complexes.",
         "skill-5-title": "Claude 101",
-        "skill-5-desc": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning on other topics.",
+        "skill-5-desc": "Apprendre à utiliser Claude pour les tâches professionnelles quotidiennes, maîtriser les fonctionnalités essentielles et explorer des ressources pour aller plus loin.",
         "skill-6-title": "AI Fluency & Collaboration",
         "skill-6-desc": "Collaboration responsable homme-machine et expertise en Prompt Engineering pour des résultats de haute précision.",
         "edu-title": "Formation",
