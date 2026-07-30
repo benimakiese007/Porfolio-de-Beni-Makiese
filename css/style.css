@@ -243,8 +243,11 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: center 15%; /* Focus on the upper part where the head is */
-    transform: scale(1.4); /* Zoom in to crop the body */
+    transform: scale(1.1) translateZ(0); /* Zoom in to crop the body, translateZ for quality */
     transition: transform 0.6s ease;
+    /* Optimisation de la qualité */
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
     /* Empêche le drag et la sélection de l'image */
     -webkit-user-drag: none;
     user-select: none;
@@ -252,7 +255,7 @@ p {
 }
 
 .image-wrapper:hover img {
-    transform: scale(1.55);
+    transform: scale(1.25) translateZ(0);
 }
 
 @keyframes morph {
