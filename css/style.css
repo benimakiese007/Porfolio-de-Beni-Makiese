@@ -243,11 +243,13 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: center 15%; /* Focus on the upper part where the head is */
-    transform: scale(1.1) translateZ(0); /* Zoom in to crop the body, translateZ for quality */
+    transform: scale(1.1) translateZ(0);
     transition: transform 0.6s ease;
-    /* Optimisation de la qualité */
-    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    image-rendering: -webkit-optimize-contrast; /* Fallback for some browsers */
+    will-change: transform;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     /* Empêche le drag et la sélection de l'image */
     -webkit-user-drag: none;
     user-select: none;

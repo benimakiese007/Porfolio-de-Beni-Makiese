@@ -70,7 +70,7 @@ const translations = {
         "int-6-desc": "Discipline et dépassement de soi. Travail sur la force physique et la persévérance au quotidien.",
         "contact-title": "Me Contacter",
         "contact-desc": "Disponible pour des projets innovants, des collaborations créatives ou toute opportunité passionnante.",
-        "footer-text": "© 2026 Beni Makiese. Tous droits réservés.",
+        "footer-text": "© 2026 Beni Makiese.<br>Tous droits réservés.",
         "projects-title": "Projets Académiques",
         "blog-title": "Réflexions & Analyses",
         "project-newket-desc": "Plateforme d'achat de billets en ligne, simplifiant l'accès aux événements locaux.",
@@ -172,7 +172,7 @@ const translations = {
         "int-6-desc": "Discipline and pushing limits. Daily work on physical strength and perseverance.",
         "contact-title": "Contact Me",
         "contact-desc": "Available for innovative projects, creative collaborations, or any exciting opportunity.",
-        "footer-text": "© 2026 Beni Makiese. All rights reserved.",
+        "footer-text": "© 2026 Beni Makiese.<br>All rights reserved.",
         "projects-title": "Academic Projects",
         "blog-title": "Reflections & Insights",
         "project-newket-desc": "Online ticketing platform simplifying access to local events.",
@@ -241,7 +241,7 @@ function updateLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) {
-            el.textContent = translations[lang][key];
+            el.innerHTML = translations[lang][key];
         }
     });
     document.getElementById('language-toggle').querySelector('.lang-text').textContent = lang === 'fr' ? 'EN' : 'FR';
@@ -251,8 +251,7 @@ function updateLanguage(lang) {
 
 
 const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    lerp: 0.1, // Rendu plus naturel, moins flottant
     direction: 'vertical',
     gestureDirection: 'vertical',
     smooth: true,
@@ -643,7 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initThreeJS();
 
-    if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true });
+    if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: false });
 
     if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
         VanillaTilt.init(document.querySelectorAll(".skill-card, .experience-item, .project-card, .interest-card"), {
