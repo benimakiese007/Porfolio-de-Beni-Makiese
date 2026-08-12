@@ -6,7 +6,7 @@ const translations = {
         "nav-home": "Accueil",
         "nav-about": "À Propos",
         "nav-projects": "Projets",
-        "nav-blog": "Réflexions",
+        "nav-certifications": "Certifications",
         "nav-experiences": "Expériences",
         "nav-skills": "Compétences",
         "nav-contact": "Contact",
@@ -108,7 +108,7 @@ const translations = {
         "nav-home": "Home",
         "nav-about": "About",
         "nav-projects": "Projects",
-        "nav-blog": "Reflections",
+        "nav-certifications": "Certifications",
         "nav-experiences": "Experience",
         "nav-skills": "Skills",
         "nav-contact": "Contact",
@@ -398,8 +398,52 @@ magneticElements.forEach((el) => {
     });
 });
 
+
+// ================================================================
+// CERTIFICATIONS — Rendu automatique depuis certifications-config.js
+// ================================================================
+function renderCertifications() {
+    const grid = document.querySelector('.certif-grid');
+    if (!grid) return;
+
+    if (typeof CERTIFICATIONS === 'undefined' || CERTIFICATIONS.length === 0) {
+        grid.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:2rem;">Aucune certification configurée.</p>';
+        return;
+    }
+
+    const basePath = 'assets/Certifications/';
+
+    // Pas de data-aos sur les éléments dynamiques — on utilise une animation CSS native
+    grid.innerHTML = CERTIFICATIONS.map((cert, index) => {
+        const filePath = basePath + encodeURIComponent(cert.file);
+        const idBadge = cert.id ? `<span class="certif-id">ID : ${cert.id}</span>` : '';
+        return `
+        <div class="certif-card certif-card-anim" style="animation-delay:${index * 0.15}s">
+            <div class="certif-top">
+                <div class="certif-org">
+                    <div class="certif-icon"><i class="${cert.icon || 'fa-solid fa-certificate'}"></i></div>
+                    <span class="certif-issuer">${cert.issuer}</span>
+                </div>
+                <a class="certif-open-btn" href="${filePath}" target="_blank" rel="noopener" title="Voir le certificat">
+                    <i class="fa-solid fa-eye"></i> Voir
+                </a>
+            </div>
+            <div class="certif-body">
+                <h3 class="certif-name">${cert.title}</h3>
+                <div class="certif-meta">
+                    <span class="certif-date"><i class="fa-regular fa-calendar"></i> ${cert.date}</span>
+                    ${idBadge}
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
 // 5. Initialization & Advanced Scroll Animations
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Génération des cartes de certification
+    renderCertifications();
 
     // Hero Name Animation
     const heroName = document.querySelector('.hero-name');
